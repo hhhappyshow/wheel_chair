@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+case "${1:-}" in
+  contract|snapshot|inverse-kinematics|camera-status|camera-profiles|capture|observe|prepare-reference|run-cycle) ;;
+  *) printf '%s\n' 'Usage: s20-live {contract|snapshot|camera-status|camera-profiles|capture|prepare-reference} [arguments]' >&2; exit 2 ;;
+esac
+printf -v remote '%q ' /home/hku_reconova/s20_contact_mixed_20261025_r2/experiments/s20_online_mixed8_20261024/deployment/s20-device "$@"
+exec ssh -o BatchMode=yes -o ConnectTimeout=5 -o StrictHostKeyChecking=yes \
+  -i "$HOME/.ssh/s20_rental_ed25519" hku_reconova@192.168.3.12 "$remote"

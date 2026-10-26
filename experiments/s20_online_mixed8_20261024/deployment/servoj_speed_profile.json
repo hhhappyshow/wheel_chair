@@ -1,0 +1,46 @@
+{
+  "execution_enabled": false,
+  "scope": "Offline deployment interface only; no controller connection or motion authorization",
+  "sdk_protocol": "HRIF_StartServo + HRIF_PushServoJ",
+  "servo_period_s": 0.02,
+  "lookahead_s": 0.2,
+  "reported_firmware": "HR6.5.13g.beta.T193.20250722",
+  "baseline_source": "User/main supplied live read-only CPS controller readbacks at LAN 192.168.3.12; this adapter made no connection",
+  "reported_override": 1.0,
+  "reported_entry_q_deg": [258.013, -84.607, -110.299, -73.610, 91.847, -14.634],
+  "phase_velocity_fractions": {
+    "normal": 0.2,
+    "approach": 0.2,
+    "final_place": 0.2
+  },
+  "place_reference_time_scale": 4.0,
+  "executor_limit_fraction": 0.2,
+  "executor_max_velocity_deg_s": 60.0,
+  "reference_acceleration_cap_deg_s2": [10, 10, 10, 10, 10, 10],
+  "reference_acceleration_basis": "User requested half of previous 20 deg/s2 reference cap; controller settings unchanged",
+  "percentage_denominator": "One application velocity base: executor max_velocity_deg=60; controller-reported joint limits remain independent upper bounds",
+  "baseline": {
+    "status": "controller_reported_selected_not_speed_tested",
+    "joint_order": ["elfin_joint1", "elfin_joint2", "elfin_joint3", "elfin_joint4", "elfin_joint5", "elfin_joint6"],
+    "controller_reported_joint_max_velocity_deg_s": [80, 80, 100, 180, 180, 180],
+    "manufacturer_joint_max_velocity_deg_s": null,
+    "tested_usable_joint_max_velocity_deg_s": null,
+    "selected_usable_joint_max_velocity_deg_s": [80, 80, 100, 180, 180, 180],
+    "selection_evidence": "Explicit user selection of live HRIF_ReadJointMaxVel baseline; not an independent physical maximum-speed test",
+    "physically_tested_at_selected_limits": false,
+    "controller_reported_joint_max_acceleration_deg_s2": [100, 100, 100, 100, 100, 100],
+    "selected_usable_joint_max_acceleration_deg_s2": [100, 100, 100, 100, 100, 100],
+    "acceleration_selection_evidence": "Live HRIF_ReadJointMaxAcc; unchanged as requested, not increased or independently speed-tested"
+  },
+  "retiming": {
+    "method": "Limit-based timing of the accepted geometric path, resampled at the fixed servo period",
+    "phase_velocity_limit_formula": "min(controller_joint_max[j], executor_max_velocity_deg_s * phase_fraction, executor_max_velocity_deg_s * executor_fraction)",
+    "acceleration_policy": "Separate explicit usable acceleration constraints; velocity percentages do not define acceleration percentages",
+    "old_reference_timing_is_speed_baseline": false,
+    "urdf_limits_are_tested_evidence": false,
+    "write_controller_override": false,
+    "unresolved_baseline_blocks_reference_preparation": true,
+    "revalidate_resampled_reference_with_actual_start_and_attachment": true,
+    "phase_transition": "Rest boundary or continuous time-law transition; no abrupt nonzero-velocity scale switch"
+  }
+}

@@ -8,6 +8,8 @@
 
 ### 2026-10-26 感知等待优化：会话复用与媒体异步回传
 
+- 用户报告DI0重新上线，要求人工和系统监督两个入口，其他行为相同。保留同一online_session/native_cycle_bridge的--vacuum-feedback operator|digital，不复制两套算法；operator仍1/2/3确认，digital保留既有DI0高有效、吸附DO10且DI0=1持续1秒/最长30秒、搬运中失吸停止和释放DI0=0规则。此前digital破真空保持至DI反馈、operator固定0.2秒，现统一两版DO时序为DO0关→DO1开0.2秒→DO1关，再各自确认；人工版原有时序不变，数字版新时序未实机验收。不伪造/写DI，不据用户报告宣称已验证压力接线或支撑。更新GitHub README分列离线当前规划、历史Newton仿真和原生回放、真机两种入口、参数、源码归属和缺项；保持YOLO11m、XY每侧5cm、中心吸取、下压2cm、横放优先、先深度后横移下放和释放后上抬20cm，未下发运动/IO。
+- 本轮确认无活动online/observe/native任务后，同步统一profile加载器与配置、会话/观测/候选/place、native桥及两份规划源到Jetson。对同一recipe的operator/digital无execute解析返回相同8个操作，未连接SDK执行，两版当前CLI均可解析。只读SDK快照2026-10-26T06:05:43Z（客户端标签）为StandBy33、DI0=0、DO00、override回读0.010；未修改倍率/使能/阀门，不能凭此称真空反馈已验证。快照本机supervision_modes_20261026/controller_snapshot.json，原native桥备份保留。同源117文件导出至exports/CPS-Intern，仓库README独立整理，源目录/其他课题未搬动。
 - 用户指定舱内持箱顺序改为先伸入→再左右水平移位→最后竖直下放。新增仅部署启用的insert_then_shift：入舱横向通道由示教entry TCP及当前吸附变换推算箱体位置，并夹至门框可用开口；按既有路线高度候选先到目标深度、再移至目标Y、最后下放，保留持箱整臂IK/CAD和箱体通道检查。三段独立标记INSERT_DEPTH/SHIFT_LATERAL/LOWER_FINAL并由native官方MoveL执行，不合成MovePathJ斜向插入。保留XY每侧5cm代理余量、真实支撑判定、释放后worldZ+20cm直升和原空载返回；速度参数与真空IO/确认逻辑未改。
 - 052527四份实测输入从空舱顺次更新新布局，pick/place/空载返回准备4/4通过，place计算4.140/2.437/2.218/2.291秒（初始化另计）。证据depth_then_shift_20261026/{before/,verification.json,replanned_1/至replanned_4/}；三文件同步Jetson，无运动/IO下发。此处是离线参考与SDK分段接入，非新版四件真机验收；5cm高度同层归并尚未启用。
 - 用户要求释放后先竖直抬升20cm以免拖箱、检测箱体水平四周各膨胀5cm。当前部署place使用测得长宽各+10cm、高度不变的碰撞/布局代理；原尺寸、吸取中心、接触下压偏置及半高吸附变换不变，提交占据/catalog明确为带余量代理。支撑判定将XY代理每侧缩回5cm后用实际底面计算，不能把虚拟余量当材料支撑。此配置不适合不注明来源地继承旧无膨胀占据，重跑需空舱新会话。释放后只保留world-Z+20cm分离首段，无斜向后退替代；native桥将_EMPTY_SEPARATE交官方MoveL，再接原独立空载返回；速度数值与阀门/人工确认时机不变。

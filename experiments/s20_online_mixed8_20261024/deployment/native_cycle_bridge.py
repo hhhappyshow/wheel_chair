@@ -72,7 +72,7 @@ def main():
                         time.sleep(.05)
                     record('suction_output_confirmed',value=io,
                         readback_wait_s=time.monotonic()-began,pressure_measured=False)
-                    confirm('2','No vacuum sensor: confirm actual suction and supervise the following motion.')
+                    confirm('2','Operator mode: confirm actual suction and supervise the following motion.')
                 else:
                     confirm('3','Confirm the box is supported and the suction cup has physically released.')
                 return
@@ -187,9 +187,7 @@ def main():
                 elif kind=='bind_async_result':record('entry_feedback',scene_version=op['scene_version'])
                 elif kind in ('release_and_confirm_support','release_and_confirm_vacuum_off'):
                     holding=False;valve(0,False);valve(1,True)
-                    if a.vacuum_feedback=='operator':
-                        time.sleep(.2);valve(1,False);wait_vacuum(0)
-                    else:wait_vacuum(0);valve(1,False)
+                    time.sleep(.2);valve(1,False);wait_vacuum(0)
                 elif kind=='commit_planned_occupancy':
                     (a.output/'scene_state.json').write_text(json.dumps(recipe['next_scene_after_execution'],indent=2))
                     report.update(occupancy_committed=True,occupancy_source='planned_release_pose_assumption')

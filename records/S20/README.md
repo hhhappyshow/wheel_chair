@@ -10,6 +10,7 @@
 ./s20 config                 # 查看当前配置，不访问设备
 ./s20 run --help             # 查看全部启动参数
 ./s20 run --execute          # 四件现场抓放，保留1/2/3人工确认
+./s20 run --vacuum-feedback digital --execute  # 同一流程，DI0反馈监督
 ./s20 plan --observation /完整路径/已记录的observation目录
 ```
 
@@ -37,6 +38,8 @@
 | 诊断与离线实验，不是主流程入口 | `compare_saved_detectors.py`、`movepath_single.py`、`native_down_compare.py`、`vacuum_stationary.py`；不因整理而执行 |
 
 当前行为：YOLO11m-seg→上表面/中心吸取→抬升/示教入舱→异步候选与IK/CAD→先伸入、再横移、最后下放→释放确认→竖直上抬20cm→空载返回。水平每侧5cm代理余量，实际底面支撑另算；5cm高度归并尚未启用。当前是贪心/数值规划，不是RL、严格GSIP/KC复现，也不把现用LM路径称cuRobo V2后端。
+
+监督模式共用同一代码：`operator`为1确认空载、2确认吸稳/入舱交接、3确认释放与支撑；`digital`按当前DI0高有效约定，吸附须DI0=1且DO=10稳定1秒（最多等待30秒），运动中失吸停止，释放等DI0=0。两版共同DO时序为吸附10，释放先01持续0.2秒再00，之后分别等人工或DI反馈；数字输入不是支撑/落稳检测，也不提供独立机器人安全认证。DI0恢复由用户报告，本轮未操作泵验证实际对应关系。速度数值与路径不因监督模式变化。
 
 规划依赖仍借用`experiments/s20_greedy_async_20261023`、`s20_newton_update_20261020/runtime13`及`reproductions/ludan_greedy_20261023`；这些外部依赖尚未抽成独立可安装包，不能单拷deployment就称完整部署。主机规划Python仍为`reproductions/nvidia_curobo_v2_20261023/.venv/bin/python`，其目录名不代表每次都执行cuRobo。
 

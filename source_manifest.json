@@ -218,7 +218,7 @@
     },
     {
       "path": "experiments/s20_online_mixed8_20261024/deployment/native_cycle_bridge.py",
-      "bytes": 12450,
+      "bytes": 12334,
       "provenance": "Project integration/adaptation; inherited portions are not asserted to be original authorship"
     },
     {
@@ -558,12 +558,12 @@
     },
     {
       "path": "records/S20/README.md",
-      "bytes": 4871,
+      "bytes": 5509,
       "provenance": "Project integration/adaptation; inherited portions are not asserted to be original authorship"
     },
     {
       "path": "records/S20/RESEARCH_DIARY.md",
-      "bytes": 246465,
+      "bytes": 248047,
       "provenance": "Project integration/adaptation; inherited portions are not asserted to be original authorship"
     },
     {
@@ -587,7 +587,7 @@
       "provenance": "Project integration/adaptation; inherited portions are not asserted to be original authorship"
     }
   ],
-  "total_bytes": 1323589,
+  "total_bytes": 1325693,
   "excluded": [
     "credentials",
     "virtualenvs",

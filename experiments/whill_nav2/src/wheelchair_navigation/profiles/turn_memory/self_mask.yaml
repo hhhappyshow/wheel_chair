@@ -1,0 +1,26 @@
+nav2_self_mask:
+  ros__parameters:
+    filter1:
+      name: front_left_self_returns
+      type: laser_filters/LaserScanBoxFilter
+      params:
+        box_frame: base_link
+        min_x: 0.62
+        max_x: 0.77
+        min_y: 0.13
+        max_y: 0.28
+        min_z: -1.0
+        max_z: 1.0
+        invert: false
+    filter2:
+      name: front_right_self_returns
+      type: laser_filters/LaserScanBoxFilter
+      params:
+        box_frame: base_link
+        min_x: 0.62
+        max_x: 0.77
+        min_y: -0.28
+        max_y: -0.13
+        min_z: -1.0
+        max_z: 1.0
+        invert: false

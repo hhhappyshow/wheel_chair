@@ -1,0 +1,128 @@
+From 594569baa4dda6628d83615d416d7bae2bbceb53 Mon Sep 17 00:00:00 2001
+From: RBT22 <rozgonyibalint@gmail.com>
+Date: Fri, 17 Jan 2025 13:08:57 +0100
+Subject: [PATCH 1/2] Add acc limit consideration to avoid overshoot in
+ RotationShimController
+
+Signed-off-by: RBT22 <rozgonyibalint@gmail.com>
+---
+ .../src/nav2_rotation_shim_controller.cpp                   | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/nav2_rotation_shim_controller/src/nav2_rotation_shim_controller.cpp b/nav2_rotation_shim_controller/src/nav2_rotation_shim_controller.cpp
+index f5fcf4c5b27..c877355c6ab 100644
+--- a/nav2_rotation_shim_controller/src/nav2_rotation_shim_controller.cpp
++++ b/nav2_rotation_shim_controller/src/nav2_rotation_shim_controller.cpp
+@@ -300,6 +300,12 @@ RotationShimController::computeRotateToHeadingCommand(
+   cmd_vel.twist.angular.z =
+     std::clamp(angular_vel, min_feasible_angular_speed, max_feasible_angular_speed);
+ 
++  // Check if we need to slow down to avoid overshooting
++  double max_vel_to_stop = std::sqrt(2 * max_angular_accel_ * fabs(angular_distance_to_heading));
++  if (fabs(cmd_vel.twist.angular.z) > max_vel_to_stop) {
++    cmd_vel.twist.angular.z = sign * max_vel_to_stop;
++  }
++
+   isCollisionFree(cmd_vel, angular_distance_to_heading, pose);
+   return cmd_vel;
+ }
+
+From 7c1986a54e3952d23c9e461c0899b56c30951a80 Mon Sep 17 00:00:00 2001
+From: RBT22 <rozgonyibalint@gmail.com>
+Date: Wed, 22 Jan 2025 09:58:33 +0000
+Subject: [PATCH 2/2] Add acceleration limit tests to RotationShimController
+
+Signed-off-by: RBT22 <rozgonyibalint@gmail.com>
+---
+ .../test/test_shim_controller.cpp             | 78 +++++++++++++++++++
+ 1 file changed, 78 insertions(+)
+
+diff --git a/nav2_rotation_shim_controller/test/test_shim_controller.cpp b/nav2_rotation_shim_controller/test/test_shim_controller.cpp
+index 537f344d746..adfc56f8f78 100644
+--- a/nav2_rotation_shim_controller/test/test_shim_controller.cpp
++++ b/nav2_rotation_shim_controller/test/test_shim_controller.cpp
+@@ -390,6 +390,84 @@ TEST(RotationShimControllerTest, computeVelocityGoalRotationTests) {
+   EXPECT_EQ(cmd_vel.twist.angular.z, 1.8);
+ }
+ 
++TEST(RotationShimControllerTest, accelerationTests) {
++  auto ctrl = std::make_shared<RotationShimShim>();
++  auto node = std::make_shared<rclcpp_lifecycle::LifecycleNode>("ShimControllerTest");
++  std::string name = "PathFollower";
++  auto tf = std::make_shared<tf2_ros::Buffer>(node->get_clock());
++  auto listener = std::make_shared<tf2_ros::TransformListener>(*tf, node, true);
++  auto costmap = std::make_shared<nav2_costmap_2d::Costmap2DROS>("fake_costmap");
++  rclcpp_lifecycle::State state;
++  costmap->on_configure(state);
++  auto tf_broadcaster = std::make_shared<tf2_ros::TransformBroadcaster>(node);
++
++  geometry_msgs::msg::TransformStamped transform;
++  transform.header.frame_id = "base_link";
++  transform.child_frame_id = "odom";
++  transform.transform.rotation.x = 0.0;
++  transform.transform.rotation.y = 0.0;
++  transform.transform.rotation.z = 0.0;
++  transform.transform.rotation.w = 1.0;
++  tf_broadcaster->sendTransform(transform);
++
++  // set a valid primary controller so we can do lifecycle
++  node->declare_parameter(
++    "PathFollower.primary_controller",
++    std::string("nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"));
++  node->declare_parameter(
++    "controller_frequency",
++    20.0);
++  node->declare_parameter(
++    "PathFollower.rotate_to_goal_heading",
++    true);
++  node->declare_parameter(
++    "PathFollower.max_angular_accel",
++    0.5);
++
++  auto controller = std::make_shared<RotationShimShim>();
++  controller->configure(node, name, tf, costmap);
++  controller->activate();
++
++  // Test state update and path setting
++  nav_msgs::msg::Path path;
++  path.header.frame_id = "base_link";
++  path.poses.resize(4);
++
++  geometry_msgs::msg::PoseStamped pose;
++  pose.header.frame_id = "base_link";
++  geometry_msgs::msg::Twist velocity;
++  nav2_controller::SimpleGoalChecker checker;
++  node->declare_parameter(
++    "checker.xy_goal_tolerance",
++    1.0);
++  checker.initialize(node, "checker", costmap);
++
++  path.header.frame_id = "base_link";
++  path.poses[0].pose.position.x = 0.0;
++  path.poses[0].pose.position.y = 0.0;
++  path.poses[1].pose.position.x = 0.05;
++  path.poses[1].pose.position.y = 0.05;
++  path.poses[2].pose.position.x = 0.10;
++  path.poses[2].pose.position.y = 0.10;
++  // goal position within checker xy_goal_tolerance
++  path.poses[3].pose.position.x = 0.20;
++  path.poses[3].pose.position.y = 0.20;
++  // goal heading 45 degrees to the left
++  path.poses[3].pose.orientation.z = -0.3826834;
++  path.poses[3].pose.orientation.w = 0.9238795;
++  path.poses[3].header.frame_id = "base_link";
++
++  // Test acceleration limits
++  controller->setPlan(path);
++  auto cmd_vel = controller->computeVelocityCommands(pose, velocity, &checker);
++  EXPECT_EQ(cmd_vel.twist.angular.z, -0.025);
++
++  // Test slowing down to avoid overshooting
++  velocity.angular.z = -1.8;
++  cmd_vel = controller->computeVelocityCommands(pose, velocity, &checker);
++  EXPECT_NEAR(cmd_vel.twist.angular.z, -std::sqrt(2 * 0.5 * M_PI / 4), 1e-4);
++}
++
+ TEST(RotationShimControllerTest, isGoalChangedTest)
+ {
+   auto ctrl = std::make_shared<RotationShimShim>();

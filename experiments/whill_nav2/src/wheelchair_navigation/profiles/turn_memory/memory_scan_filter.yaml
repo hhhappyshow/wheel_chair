@@ -1,0 +1,14 @@
+scan_to_scan_filter_chain:
+  ros__parameters:
+    filter1:
+      name: preserve_existing_self_echo_mask
+      type: laser_filters/LaserScanBoxFilter
+      params:
+        box_frame: base_link
+        min_x: -0.38
+        max_x: 0.77
+        min_y: -0.28
+        max_y: 0.28
+        min_z: -1.0
+        max_z: 1.0
+        invert: false

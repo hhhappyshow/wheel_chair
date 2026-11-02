@@ -1,0 +1,34 @@
+{
+  "captured_date": "2026-11-03",
+  "jetson_workspace": "/home/whill/Shaki_ws/src/WheelChair_ws",
+  "profile": "turn_memory",
+  "navigation2": {
+    "origin": "https://github.com/ros-navigation/navigation2.git",
+    "revision": "3c3db59d6969d8ecee8e68468693d006397f4a0c",
+    "patch": "patches/navigation2_humble.patch",
+    "patch_sha256": "bc1fe3ebedf31b1ce36ade933dfbdb7abae79b018e852b6df95e9d0f68b62461"
+  },
+  "navigation_yaml_sha256": "89f607f43e419bde17a0aaeca00465befaa6c425bbdd510aca97857510ce4cc8",
+  "source_inventory": "docs/jetson_source_inventory.json",
+  "baseline_comparison": "docs/baseline_comparison.json",
+  "included": [
+    "wheelchair_navigation",
+    "whill_controller",
+    "rotation_shim_path_orientation",
+    "rotation_shim_deceleration"
+  ],
+  "external_site_dependencies": {
+    "shared_ros_workspace": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws",
+    "sensor_launcher": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/start_sensors.sh",
+    "esp32_wrapper": "/home/whill/Shaki_ws/esp32_velocity_interface",
+    "cyclone_stage": "/home/whill/Shaki_ws/dds_eval_20261030/stage/opt/ros/humble"
+  },
+  "not_exported": [
+    "wheelchair_shared_control/RDS workspace",
+    "eye camera/calibration workspace",
+    "build/install/log/runtime binaries",
+    "original recordings",
+    "credential files",
+    "absolute diagnostic symlinks"
+  ]
+}

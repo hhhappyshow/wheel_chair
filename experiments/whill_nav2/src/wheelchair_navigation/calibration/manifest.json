@@ -1,0 +1,311 @@
+{
+  "snapshots": [
+    {
+      "snapshot": "mid360/dual_MID360.json",
+      "live_source": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/config/dual_MID360.json",
+      "sha256": "89dda12fc6740dc79432b05c377bbc248e6e852966213784c871c4ea6379eef2",
+      "role": "reference snapshot; current launch retains original live source"
+    },
+    {
+      "snapshot": "odin/control_command.yaml",
+      "live_source": "/home/whill/odin_ws/src/odin_ros_driver/config/control_command.yaml",
+      "sha256": "03ccce26f212643040dda8406ae577ac6d9d316d4900b0644e97ad592a98f1d9",
+      "role": "reference snapshot; current launch retains original live source"
+    },
+    {
+      "snapshot": "odin/calib.yaml",
+      "live_source": "/home/whill/.ros/odin_ros_driver/calib.yaml",
+      "sha256": "8d61df9cb1a194266bc185739fcaa2aaeb537912c58966e039f59559fa678883",
+      "role": "reference snapshot; current launch retains original live source"
+    },
+    {
+      "snapshot": "perception/hardware_bridge.yaml",
+      "live_source": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/hardware_bridge.yaml",
+      "sha256": "986e0b39ab48f026b278a1300bed03af3b53cb375806275d756fc02227fdabb8",
+      "role": "reference snapshot; current launch retains original live source"
+    },
+    {
+      "snapshot": "perception/body_filter.yaml",
+      "live_source": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/body_filter.yaml",
+      "sha256": "8a06a39d34632c7f0855237e3f474ab1030588d9a3c30c0e42b75f72201c9920",
+      "role": "reference snapshot; current launch retains original live source"
+    },
+    {
+      "snapshot": "actuator/ipad_calibration_20261009.json",
+      "live_source": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/config/ipad_calibration_20261009.json",
+      "sha256": "d515e4c0c0aacaab961e4d5af1f4e94e9345acc84a232ccb18c5548bb2dd64dd",
+      "role": "reference snapshot; current launch retains original live source"
+    },
+    {
+      "snapshot": "tf/sensors_tf.launch.py",
+      "live_source": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+      "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+      "role": "reference snapshot; current launch retains original live source"
+    }
+  ],
+  "tf_convention": {
+    "base_link": "rear axle center; +X forward, +Y left, +Z up",
+    "transform": "T_parent_child: p_parent=R*p_child+t",
+    "fixed_axis_rpy_order": "Rz(yaw)*Ry(pitch)*Rx(roll)",
+    "translation_unit": "m",
+    "tf_rpy_unit": "rad",
+    "yaw_positive": "left / counterclockwise seen from +Z",
+    "camera_0": "optical: +Z forward, +X right, +Y down",
+    "nav2_global_frame": "odom",
+    "twist": "linear.x m/s; angular.z rad/s; positive v forward, positive w left"
+  },
+  "static_transforms": [
+    {
+      "parent": "base_link",
+      "child": "lidar",
+      "translation_m": [
+        0.45,
+        0.25,
+        0.65
+      ],
+      "fixed_axis_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "imu",
+      "translation_m": [
+        0.45,
+        0.25,
+        0.65
+      ],
+      "fixed_axis_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "camera_0",
+      "translation_m": [
+        0.457415,
+        0.279663,
+        0.63946
+      ],
+      "fixed_axis_rpy_rad": [
+        -1.564317,
+        0.012941,
+        -1.577013
+      ],
+      "quaternion_xyzw": [
+        -0.4935598521596528,
+        0.5031493842519192,
+        -0.499948750811248,
+        0.5032798585531997
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 5.551115123125783e-17
+    },
+    {
+      "parent": "base_link",
+      "child": "seat_link",
+      "translation_m": [
+        0.27,
+        0,
+        0.42
+      ],
+      "fixed_axis_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "base_footprint",
+      "translation_m": [
+        0,
+        0,
+        -0.036
+      ],
+      "fixed_axis_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "mid360_201_local",
+      "translation_m": [
+        0.55,
+        -0.21,
+        0.32
+      ],
+      "fixed_axis_rpy_rad": [
+        3.141592653589793,
+        -0.017453292519943295,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.9999619230641713,
+        -5.343461882864696e-19,
+        0.008726535498373935,
+        6.123000841748846e-17
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "mid360_202_local",
+      "translation_m": [
+        0.55,
+        0.21,
+        0.32
+      ],
+      "fixed_axis_rpy_rad": [
+        3.141592653589793,
+        0,
+        -0.017453292519943295
+      ],
+      "quaternion_xyzw": [
+        0.9999619230641713,
+        -0.008726535498373935,
+        -5.343461882864696e-19,
+        6.123000841748846e-17
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "mid360_201_local",
+      "child": "mid360_192_168_86_201",
+      "translation_m": [
+        0,
+        0,
+        0
+      ],
+      "fixed_axis_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "source": {
+        "sourcepath": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py",
+        "observed_path": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py",
+        "sha256": "40b8ab1bd22b498fc9d9ca5a03124d51ddd828a6362bfd26a5c8d43d478f1820",
+        "size_bytes": 1969
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "mid360_202_local",
+      "child": "mid360_192_168_86_202",
+      "translation_m": [
+        0,
+        0,
+        0
+      ],
+      "fixed_axis_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "source": {
+        "sourcepath": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py",
+        "observed_path": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py",
+        "sha256": "40b8ab1bd22b498fc9d9ca5a03124d51ddd828a6362bfd26a5c8d43d478f1820",
+        "size_bytes": 1969
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+body_cloud_filter:
+  ros__parameters:
+    body_frame: base_link
+    # Radar x=0.55: 0.70 m behind to 0.25 m ahead.
+    x_min: -0.15
+    x_max: 0.80
+    # User-requested body mask: 0.275 m to each side of base_link.
+    y_min: -0.275
+    y_max: 0.275

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<package format="3"><name>wheelchair_navigation</name><version>1.0.0</version>
+<description>WHILL navigation profiles, calibration references and operator launchers.</description>
+<maintainer email="whill@example.invalid">WHILL team</maintainer><license>Apache-2.0</license>
+<buildtool_depend>ament_cmake</buildtool_depend>
+<exec_depend>nav2_bringup</exec_depend><exec_depend>whill_controller</exec_depend>
+<export><build_type>ament_cmake</build_type></export></package>

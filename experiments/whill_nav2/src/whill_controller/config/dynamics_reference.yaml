@@ -1,0 +1,21 @@
+schema_version: 1
+status: reference_only_not_loaded_by_velocity_interface
+source: existing real-chair dwb_preview.yaml
+navigation_limits:
+  forward_velocity_mps: 0.3
+  angular_velocity_radps: 0.4
+  linear_acceleration_mps2: 0.3
+  angular_acceleration_radps2: 0.5
+  linear_deceleration_mps2: 0.3
+  angular_deceleration_radps2: 0.5
+physical_acceleration_calibration:
+  status: measured_from_bag_event_averages_not_certified_maximum
+  file: measured_dynamics.yaml
+historical_braking_model:
+  status: old_firmware_prediction_only_not_command_limits
+  delay_s: 0.21
+  linear_deceleration_mps2: 0.7
+  angular_deceleration_radps2: 2.6
+enforcement: The adapter forwards incoming commands; no acceleration limiter or closed-loop
+  speed controller is implemented here. Upstream Nav2/controller must enforce its
+  own limits.

@@ -1,0 +1,555 @@
+schema_version: 1
+status: estimated_from_recorded_odometry_not_certified_hardware_maximum
+analyzed_bags: 51
+odometry_samples: 138483
+firmware_selection:
+  after_unix: 1793354845.0298562
+  after_local: '2026-10-30 18:07:25 +08:00'
+  evidence: flash_bench_default.log; only subsequent recordings enter the current-firmware
+    table
+method:
+  velocity_reference: surveyed rear-axle base_link
+  raw_linear_frame: odom
+  odin_mount_xyz_m:
+  - 0.45
+  - 0.25
+  - 0.65
+  bin_seconds: 0.04
+  savgol_window_seconds: 0.28
+  polynomial_order: 2
+  derivative: used for detecting transitions; robust-bin velocity regression over
+    central 10–90% estimates event-average acceleration
+  gap_split_seconds: 0.15
+  pure_translation_max_other_axis_radps: 0.1
+  pure_rotation_max_other_axis_mps: 0.06
+  brake_selection: velocity decrease associated with recorded button release, start
+    between release-0.35s and release+1s
+current_firmware:
+  forward:
+    accelerating:
+      events: 2
+      median: 0.3426402666661504
+      p10_p90:
+      - 0.31229176180948437
+      - 0.3729887715228164
+      min_event: 0.30470463559531785
+      max_event: 0.3805758977369829
+      source:
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357164.241045
+        duration: 1.2
+        acceleration: 0.30470463559531785
+        start_speed: 0.04157760319601283
+        end_speed: 0.39629208799659565
+      - bag: slider_diagnostic_20261030_190802/001_level3_mouse
+        start: 1793358527.1059504
+        duration: 0.28
+        acceleration: 0.3805758977369829
+        start_speed: 0.037716596709382814
+        end_speed: 0.10027077961328397
+    braking:
+      events: 2
+      median: 0.570465058881243
+      p10_p90:
+      - 0.4445283799809441
+      - 0.6964017377815419
+      min_event: 0.41304421025586935
+      max_event: 0.7278859075066166
+      source:
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357166.921045
+        duration: 0.56
+        acceleration: 0.7278859075066166
+        start_speed: 0.4246102031701556
+        end_speed: 0.04880136177004355
+      - bag: slider_diagnostic_20261030_190802/001_level3_mouse
+        start: 1793358531.7859504
+        duration: 0.28
+        acceleration: 0.41304421025586935
+        start_speed: 0.1039320686475226
+        end_speed: 0.0317440257986979
+  reverse:
+    accelerating:
+      events: 8
+      median: 0.3278848798911068
+      p10_p90:
+      - 0.31553743971912956
+      - 0.34832883821945054
+      min_event: 0.3111256974076684
+      max_event: 0.36289131709532413
+      source:
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357142.8010452
+        duration: 0.92
+        acceleration: 0.3287053534156382
+        start_speed: -0.04422438817964557
+        end_speed: -0.30198982264597
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357151.281045
+        duration: 1.28
+        acceleration: 0.32706440636657547
+        start_speed: -0.030629774847291607
+        end_speed: -0.3946674304740678
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357169.681045
+        duration: 1.24
+        acceleration: 0.31742818642404147
+        start_speed: -0.03203152819452184
+        end_speed: -0.3940051137325294
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357176.6010451
+        duration: 0.32
+        acceleration: 0.3314592096299753
+        start_speed: -0.0442431393929305
+        end_speed: -0.11150245918409513
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357188.481045
+        duration: 0.76
+        acceleration: 0.3230259763675905
+        start_speed: -0.03077092369921076
+        end_speed: -0.23863555533604408
+      - bag: slider_diagnostic_20261030_185623/001_level3_mouse
+        start: 1793358019.3766
+        duration: 1.0
+        acceleration: 0.3111256974076684
+        start_speed: -0.03941525993333553
+        end_speed: -0.3160229893743716
+      - bag: slider_diagnostic_20261030_190802/001_level3_mouse
+        start: 1793358538.6259503
+        duration: 0.32
+        acceleration: 0.36289131709532413
+        start_speed: -0.032612677874357746
+        end_speed: -0.10367313800418805
+      - bag: slider_diagnostic_20261030_190802/001_level3_mouse
+        start: 1793358946.3585155
+        duration: 0.92
+        acceleration: 0.3420877758440762
+        start_speed: -0.0326845146686292
+        end_speed: -0.29767796109407013
+    braking:
+      events: 9
+      median: 0.5622647934958249
+      p10_p90:
+      - 0.37490754470947063
+      - 0.8859523229649244
+      min_event: 0.2869373065825528
+      max_event: 0.9397616462100687
+      source:
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357145.5610452
+        duration: 0.48
+        acceleration: 0.6984276852150239
+        start_speed: -0.2973323006976602
+        end_speed: -0.03632006000806652
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357153.8410451
+        duration: 0.52
+        acceleration: 0.8724999921536383
+        start_speed: -0.4002956759880393
+        end_speed: -0.040641873728169055
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357172.3610451
+        duration: 0.52
+        acceleration: 0.9397616462100687
+        start_speed: -0.39509062834188957
+        end_speed: -0.04103216396111368
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357179.201045
+        duration: 0.32
+        acceleration: 0.3969001042412001
+        start_speed: -0.11209355396935448
+        end_speed: -0.030751256103376787
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357191.241045
+        duration: 0.4
+        acceleration: 0.5120837918147589
+        start_speed: -0.23715341062491094
+        end_speed: -0.03226825938486456
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357197.001045
+        duration: 0.44
+        acceleration: 0.5098008516143395
+        start_speed: -0.258564391512789
+        end_speed: -0.03373775999245515
+      - bag: slider_diagnostic_20261030_185623/001_level3_mouse
+        start: 1793358024.0566
+        duration: 0.52
+        acceleration: 0.6972548961955195
+        start_speed: -0.31309602015566845
+        end_speed: -0.031798498909225655
+      - bag: slider_diagnostic_20261030_190802/001_level3_mouse
+        start: 1793358543.3859503
+        duration: 0.2
+        acceleration: 0.2869373065825528
+        start_speed: -0.0903383113477671
+        end_speed: -0.046469672979515125
+      - bag: slider_diagnostic_20261030_190802/001_level3_mouse
+        start: 1793358948.0385156
+        duration: 0.48
+        acceleration: 0.5622647934958249
+        start_speed: -0.30171933600947004
+        end_speed: -0.03137847959647243
+  left:
+    accelerating:
+      events: 3
+      median: 1.7789812500000366
+      p10_p90:
+      - 1.4509022500001896
+      - 1.8599342500001221
+      min_event: 1.3688825000002278
+      max_event: 1.8801725000001435
+      source:
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357262.121045
+        duration: 0.2
+        acceleration: 1.3688825000002278
+        start_speed: 0.10788459523804686
+        end_speed: 0.2945618095237961
+      - bag: slider_diagnostic_20261030_190802/001_level3_mouse
+        start: 1793358570.6259503
+        duration: 0.32
+        acceleration: 1.7789812500000366
+        start_speed: 0.10060297619046633
+        end_speed: 0.553686678571429
+      - bag: slider_diagnostic_20261030_190802/001_level3_mouse
+        start: 1793358580.8659503
+        duration: 0.36
+        acceleration: 1.8801725000001435
+        start_speed: 0.0681146666666522
+        end_speed: 0.5472474523809492
+    braking:
+      events: 2
+      median: 1.82008982142843
+      p10_p90:
+      - 1.5723393928570415
+      - 2.067840249999819
+      min_event: 1.5104017857141943
+      max_event: 2.129777857142666
+      source:
+      - bag: slider_diagnostic_20261030_190802/001_level3_mouse
+        start: 1793358575.4659505
+        duration: 0.24
+        acceleration: 2.129777857142666
+        start_speed: 0.4959342380952357
+        end_speed: 0.08900185714288801
+      - bag: slider_diagnostic_20261030_190802/001_level3_mouse
+        start: 1793358582.7059505
+        duration: 0.28
+        acceleration: 1.5104017857141943
+        start_speed: 0.5039941666666664
+        end_speed: 0.1279033809524169
+  right:
+    accelerating:
+      events: 6
+      median: 1.638937291666858
+      p10_p90:
+      - 1.153525625000214
+      - 2.0278593749999234
+      min_event: 1.1219475000000996
+      max_event: 2.253791071428267
+      source:
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357194.121045
+        duration: 0.24
+        acceleration: 1.1219475000000996
+        start_speed: -0.09797842857141155
+        end_speed: -0.3359120952380893
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357204.641045
+        duration: 0.48
+        acceleration: 1.7385970833333615
+        start_speed: -0.1154406666666413
+        end_speed: -0.8533654047618954
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357230.881045
+        duration: 0.2
+        acceleration: 1.1851037500003283
+        start_speed: -0.1259974047618629
+        end_speed: -0.3219548571428516
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357237.921045
+        duration: 0.2
+        acceleration: 1.539277500000355
+        start_speed: -0.08359707142853415
+        end_speed: -0.3299730952380727
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357250.161045
+        duration: 0.32
+        acceleration: 2.253791071428267
+        start_speed: -0.09643083333330568
+        end_speed: -0.6461012142856815
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357271.201045
+        duration: 0.4
+        acceleration: 1.8019276785715796
+        start_speed: -0.08677026190471004
+        end_speed: -0.7525137380951977
+    braking:
+      events: 1
+      median: 2.806972500000038
+      p10_p90:
+      - 2.806972500000038
+      - 2.806972500000038
+      min_event: 2.806972500000038
+      max_event: 2.806972500000038
+      source:
+      - bag: slider_diagnostic_20261030_184437/001_level3_mouse
+        start: 1793357207.441045
+        duration: 0.44
+        acceleration: 2.806972500000038
+        start_speed: -0.7855857619047631
+        end_speed: -0.09427785714287161
+symmetric_yaw_reference:
+  accelerating:
+    events: 9
+    median_magnitude_radps2: 1.7385970833333615
+  braking:
+    events: 3
+    median_magnitude_radps2: 2.129777857142666
+window_sensitivity:
+- direction: forward
+  phase: accelerating
+  window_s: 0.2
+  events: 2
+  median: 0.32034622808025665
+  p10_p90:
+  - 0.30473499576813484
+  - 0.33595746039237845
+  min_event: 0.3008321876901044
+  max_event: 0.3398602684704089
+- direction: forward
+  phase: accelerating
+  window_s: 0.28
+  events: 2
+  median: 0.3426402666661504
+  p10_p90:
+  - 0.31229176180948437
+  - 0.3729887715228164
+  min_event: 0.30470463559531785
+  max_event: 0.3805758977369829
+- direction: forward
+  phase: accelerating
+  window_s: 0.4
+  events: 2
+  median: 0.3156167291023556
+  p10_p90:
+  - 0.3068870542967254
+  - 0.3243464039079858
+  min_event: 0.30470463559531785
+  max_event: 0.32652882260939337
+- direction: forward
+  phase: braking
+  window_s: 0.2
+  events: 2
+  median: 0.4912362563209414
+  p10_p90:
+  - 0.30191653537240126
+  - 0.6805559772694816
+  min_event: 0.2545866051352662
+  max_event: 0.7278859075066166
+- direction: forward
+  phase: braking
+  window_s: 0.28
+  events: 2
+  median: 0.570465058881243
+  p10_p90:
+  - 0.4445283799809441
+  - 0.6964017377815419
+  min_event: 0.41304421025586935
+  max_event: 0.7278859075066166
+- direction: forward
+  phase: braking
+  window_s: 0.4
+  events: 2
+  median: 0.5540016223501909
+  p10_p90:
+  - 0.4148941942250502
+  - 0.6931090504753314
+  min_event: 0.38011733719376506
+  max_event: 0.7278859075066166
+- direction: reverse
+  phase: accelerating
+  window_s: 0.2
+  events: 8
+  median: 0.33085372491334875
+  p10_p90:
+  - 0.31209672193560867
+  - 0.3616404845184684
+  min_event: 0.3073978977436614
+  max_event: 0.38849422383928417
+- direction: reverse
+  phase: accelerating
+  window_s: 0.28
+  events: 8
+  median: 0.3278848798911068
+  p10_p90:
+  - 0.31553743971912956
+  - 0.34832883821945054
+  min_event: 0.3111256974076684
+  max_event: 0.36289131709532413
+- direction: reverse
+  phase: accelerating
+  window_s: 0.4
+  events: 8
+  median: 0.32486360772817724
+  p10_p90:
+  - 0.31363878248562366
+  - 0.35319132409894205
+  min_event: 0.3073978977436614
+  max_event: 0.36289131709532413
+- direction: reverse
+  phase: braking
+  window_s: 0.2
+  events: 8
+  median: 0.5581537022158654
+  p10_p90:
+  - 0.4520595603721126
+  - 0.8513851691456165
+  min_event: 0.3969001042412001
+  max_event: 0.8752568031748132
+- direction: reverse
+  phase: braking
+  window_s: 0.28
+  events: 9
+  median: 0.5622647934958249
+  p10_p90:
+  - 0.37490754470947063
+  - 0.8859523229649244
+  min_event: 0.2869373065825528
+  max_event: 0.9397616462100687
+- direction: reverse
+  phase: braking
+  window_s: 0.4
+  events: 8
+  median: 0.650912684375714
+  p10_p90:
+  - 0.3727823591363934
+  - 0.8926784883705674
+  min_event: 0.3513529198715279
+  max_event: 0.9397616462100687
+- direction: left
+  phase: accelerating
+  window_s: 0.2
+  events: 3
+  median: 1.6808133928571964
+  p10_p90:
+  - 1.4312686785716215
+  - 1.840300678571554
+  min_event: 1.3688825000002278
+  max_event: 1.8801725000001435
+- direction: left
+  phase: accelerating
+  window_s: 0.28
+  events: 3
+  median: 1.7789812500000366
+  p10_p90:
+  - 1.4509022500001896
+  - 1.8599342500001221
+  min_event: 1.3688825000002278
+  max_event: 1.8801725000001435
+- direction: left
+  phase: accelerating
+  window_s: 0.4
+  events: 3
+  median: 1.7789812500000366
+  p10_p90:
+  - 0.9903983928573028
+  - 1.8599342500001221
+  min_event: 0.7932526785716193
+  max_event: 1.8801725000001435
+- direction: left
+  phase: braking
+  window_s: 0.2
+  events: 2
+  median: 2.2568456249998317
+  p10_p90:
+  - 1.9360491249998764
+  - 2.577642124999787
+  min_event: 1.8558499999998876
+  max_event: 2.657841249999776
+- direction: left
+  phase: braking
+  window_s: 0.28
+  events: 2
+  median: 1.82008982142843
+  p10_p90:
+  - 1.5723393928570415
+  - 2.067840249999819
+  min_event: 1.5104017857141943
+  max_event: 2.129777857142666
+- direction: left
+  phase: braking
+  window_s: 0.4
+  events: 2
+  median: 2.514029999999669
+  p10_p90:
+  - 2.4181559999997293
+  - 2.609903999999609
+  min_event: 2.3941874999997443
+  max_event: 2.633872499999594
+- direction: right
+  phase: accelerating
+  window_s: 0.2
+  events: 4
+  median: 1.7702623809524707
+  p10_p90:
+  - 1.5869730000000082
+  - 2.1182320535712607
+  min_event: 1.5219912499999995
+  max_event: 2.253791071428267
+- direction: right
+  phase: accelerating
+  window_s: 0.28
+  events: 6
+  median: 1.638937291666858
+  p10_p90:
+  - 1.153525625000214
+  - 2.0278593749999234
+  min_event: 1.1219475000000996
+  max_event: 2.253791071428267
+- direction: right
+  phase: accelerating
+  window_s: 0.4
+  events: 7
+  median: 1.6098787499999092
+  p10_p90:
+  - 1.1273383571430546
+  - 1.9698374285713551
+  min_event: 0.9899364285715624
+  max_event: 2.253791071428267
+- direction: right
+  phase: braking
+  window_s: 0.2
+  events: 1
+  median: 2.6285387500002315
+  p10_p90:
+  - 2.6285387500002315
+  - 2.6285387500002315
+  min_event: 2.6285387500002315
+  max_event: 2.6285387500002315
+- direction: right
+  phase: braking
+  window_s: 0.28
+  events: 1
+  median: 2.806972500000038
+  p10_p90:
+  - 2.806972500000038
+  - 2.806972500000038
+  min_event: 2.806972500000038
+  max_event: 2.806972500000038
+- direction: right
+  phase: braking
+  window_s: 0.4
+  events: 1
+  median: 2.806972500000038
+  p10_p90:
+  - 2.806972500000038
+  - 2.806972500000038
+  min_event: 2.806972500000038
+  max_event: 2.806972500000038
+limitations:
+- No runtime acceleration limiter enabled by this file
+- Measured event averages are not motor-rated maxima
+- Commands were manually varied; results depend on input, speed and ground
+- Current-firmware right braking has only one retained event
+- No remeasurement or physical command was issued for this analysis

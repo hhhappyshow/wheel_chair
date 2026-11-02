@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-03",
+  "syntax_counts": {
+    "python": 66,
+    "shell": 17,
+    "yaml_jetson": 20,
+    "xml": 8
+  },
+  "syntax_errors": [],
+  "snapshot_mismatches": [],
+  "robot_motion_tested": false,
+  "upstream_restore": {
+    "passed": true,
+    "files_matching_jetson": 1392,
+    "from_pinned_github_commit": true,
+    "complete_local_patch_applied": true
+  }
+}

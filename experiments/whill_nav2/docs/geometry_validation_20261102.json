@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "domain": 197,
+  "actuator_connected": false,
+  "local_footprint_vertices": 8,
+  "global_footprint_vertices": 8,
+  "both_cutouts_masked": true,
+  "external_point_preserved": true,
+  "free_v": 0.05,
+  "real_obstacle_v": 0.0,
+  "resumed_v": 0.05,
+  "collision_monitor_stayed_active": true
+}

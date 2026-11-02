@@ -1,0 +1,53 @@
+{
+  "baseline": "2026-11-01 handover source Git index",
+  "baseline_commit": "42a8d8498f38009dac87745590ee9f8b7cac9ce3",
+  "roots": {
+    "navigation2_humble": {
+      "compared_files": 1392,
+      "changed": [],
+      "not_in_baseline": [],
+      "excluded_editor_file": [
+        ".vscode/tasks.json"
+      ]
+    },
+    "rotation_shim_deceleration": {
+      "compared_files": 8,
+      "changed": [],
+      "not_in_baseline": []
+    },
+    "rotation_shim_path_orientation": {
+      "compared_files": 8,
+      "changed": [],
+      "not_in_baseline": []
+    },
+    "wheelchair_navigation": {
+      "compared_files": 112,
+      "changed": [
+        "README.md",
+        "docs/CONFIGURATION.md",
+        "docs/DEMO_AND_PRESENTATION.md",
+        "docs/WORKSPACE.md",
+        "launch/navigation_dense_candidate.launch.py",
+        "profiles/turn_memory/navigation.launch.py",
+        "profiles/turn_memory/navigation.yaml",
+        "profiles/turn_memory/simulation.yaml",
+        "profiles/turn_memory/simulation_unknown.yaml",
+        "profiles/turn_memory/start_navigation.sh",
+        "scripts/nav2.sh",
+        "support/first_run/start_sensors.sh"
+      ],
+      "not_in_baseline": [
+        "docs/inventory.json",
+        "profiles/turn_memory/self_mask.yaml"
+      ]
+    },
+    "whill_controller": {
+      "compared_files": 33,
+      "changed": [
+        "launch/velocity_interface.launch.py",
+        "whill_controller/controller_node.py"
+      ],
+      "not_in_baseline": []
+    }
+  }
+}

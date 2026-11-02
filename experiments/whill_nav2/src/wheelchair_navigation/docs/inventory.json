@@ -1,0 +1,2677 @@
+{
+  "schema_version": "1.0",
+  "title": "Jetson three-profile sensor/calibration and upstream eye-interface inventory",
+  "host": {
+    "ssh": "ssh -S /tmp/shaki-nav2-20261101.sock whill@192.168.8.115",
+    "hostname": "ubuntu",
+    "user": "whill",
+    "timezone": "Asia/Shanghai"
+  },
+  "observed_at": {
+    "discovery": "2026-11-01T04:09:59.750598+08:00",
+    "source_canonical_refresh": "2026-11-01T04:12:03.959852+08:00",
+    "runtime_start": "2026-11-01T04:11:06.994405+08:00",
+    "runtime_end": "2026-11-01T04:11:13.108262+08:00",
+    "path_and_library_audit": "2026-11-01T04:12:25.500172+08:00",
+    "extra_source_audit": "2026-11-01T04:13:13.948275+08:00"
+  },
+  "scope": {
+    "remote_read_only": true,
+    "remote_mutations": [],
+    "service_actions": [],
+    "arm_actions": [],
+    "robot_commands": [],
+    "demo_validated": false,
+    "planner_research_performed": false
+  },
+  "standard_layout": {
+    "source_root": "/home/whill/Shaki_ws/src/WheelChair_ws/src",
+    "navigation_package": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation",
+    "controller_package": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller",
+    "nav2_overlay_source": "/home/whill/Shaki_ws/src/WheelChair_ws/src/nav2_overlays/navigation2_humble",
+    "nav2_overlays_colcon_ignore": {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/nav2_overlays/COLCON_IGNORE",
+      "observed_path": "/home/whill/Shaki_ws/src/WheelChair_ws/src/nav2_overlays/COLCON_IGNORE",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    "runtime_root": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031",
+    "aliases": [
+      {
+        "alias": "/home/whill/Shaki_ws/nav2_humble_update_20261031",
+        "canonical": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031",
+        "exists": true,
+        "is_symlink": true
+      },
+      {
+        "alias": "/home/whill/Shaki_ws/src/WheelChair_ws/first_run",
+        "canonical": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/support/first_run",
+        "exists": true,
+        "is_symlink": true
+      },
+      {
+        "alias": "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller",
+        "canonical": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller",
+        "exists": true,
+        "is_symlink": true
+      },
+      {
+        "alias": "/home/whill/Shaki_ws/nav2_humble_update_20261031/src/navigation2",
+        "canonical": "/home/whill/Shaki_ws/src/WheelChair_ws/src/nav2_overlays/navigation2_humble",
+        "exists": true,
+        "is_symlink": true
+      },
+      {
+        "alias": "/home/whill/Shaki_ws/nav2_humble_update_20261031/rotation_shim_20261101/nav2_rotation_shim_controller",
+        "canonical": "/home/whill/Shaki_ws/src/WheelChair_ws/src/nav2_overlays/rotation_shim_path_orientation",
+        "exists": true,
+        "is_symlink": true
+      },
+      {
+        "alias": "/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/shim_decel_ws/src/nav2_rotation_shim_controller",
+        "canonical": "/home/whill/Shaki_ws/src/WheelChair_ws/src/nav2_overlays/rotation_shim_deceleration",
+        "exists": true,
+        "is_symlink": true
+      }
+    ],
+    "git": [
+      {
+        "path": "/home/whill/Shaki_ws/src/WheelChair_ws/src/navigation2",
+        "head": "a097086719c88f781aa59788eca29ac6ca5e56db",
+        "status": "M nav2_smac_planner/src/smac_planner_lattice.cpp\n?? \"ystemctl --user is-active shaki-sensors-cyclone.service shaki-navigation-bidirectional.service\""
+      },
+      {
+        "path": "/home/whill/Shaki_ws/src/WheelChair_ws/src/nav2_overlays/navigation2_humble",
+        "head": "3c3db59d6969d8ecee8e68468693d006397f4a0c",
+        "status": "M nav2_collision_monitor/CMakeLists.txt\n M nav2_collision_monitor/include/nav2_collision_monitor/collision_monitor_node.hpp\n M nav2_collision_monitor/include/nav2_collision_monitor/pointcloud.hpp\n M nav2_collision_monitor/include/nav2_collision_monitor/polygon.hpp\n M nav2_collision_monitor/include/nav2_collision_monitor/range.hpp\n M nav2_collision_monitor/include/nav2_collision_monitor/scan.hpp\n M nav2_collision_monitor/include/nav2_collision_monitor/source.hpp\n M nav2_collision_monitor/src/collision_monitor_node.cpp\n M nav2_collision_monitor/src/pointcloud.cpp\n M nav2_collision_monitor/src/range.cpp\n M nav2_collision_monitor/src/scan.cpp\n M nav2_collision_monitor/test/collision_monitor_node_test.cpp\n M nav2_smac_planner/src/smac_planner_lattice.cpp\n?? nav2_collision_monitor/include/nav2_collision_monitor/velocity_polygon.hpp\n?? nav2_collision_monitor/src/velocity_polygon.cpp"
+      }
+    ]
+  },
+  "profiles": [
+    {
+      "name": "lattice",
+      "entry": {
+        "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/lattice/start_navigation.sh",
+        "observed_path": "/home/whill/Shaki_ws/nav2_humble_update_20261031/start_navigation_lattice_10hz.sh",
+        "sha256": "2c09d0c2492e3a9a34b23a729b2931956086b1b9faf485a68e3369d97da65c30",
+        "size_bytes": 2522
+      },
+      "config": {
+        "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/lattice/hardware_lattice_10hz.yaml",
+        "observed_path": "/home/whill/Shaki_ws/nav2_humble_update_20261031/hardware_lattice_10hz.yaml",
+        "sha256": "320ec899c88b998c5dbfbbe342cabf85b32d3c8bac384e0bf00426dfd9c26a72",
+        "size_bytes": 9684
+      },
+      "launch": {
+        "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/launch/navigation_dense_candidate.launch.py",
+        "observed_path": "/home/whill/Shaki_ws/nav2_humble_update_20261031/lattice_arc_20261031/navigation_dense_candidate.launch.py",
+        "sha256": "6d2613f0dcf7e98400bda747e425d9d3522e1d4635b3a8b2540cc229019ba874",
+        "size_bytes": 5106
+      },
+      "observed_running_at_runtime_snapshot": false,
+      "shared_dependencies": [
+        "sensor_service",
+        "hardware_bridge",
+        "velocity_interface",
+        "dds"
+      ],
+      "extra_dependency": null,
+      "configured_velocity_smoother": {
+        "deadband_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "feedback": "OPEN_LOOP",
+        "max_accel": [
+          0.33,
+          0.0,
+          0.6
+        ],
+        "max_decel": [
+          -0.33,
+          0.0,
+          -0.6
+        ],
+        "max_velocity": [
+          0.536622219601921,
+          0.0,
+          0.8108854254075847
+        ],
+        "min_velocity": [
+          -0.40367094263942477,
+          0.0,
+          -0.8108854254075847
+        ],
+        "odom_duration": 0.1,
+        "odom_topic": "/wheelchair/odom",
+        "scale_velocities": false,
+        "smoothing_frequency": 20.0,
+        "use_sim_time": false,
+        "velocity_timeout": 0.2
+      },
+      "frames": {
+        "global": "odom",
+        "base": "base_link"
+      },
+      "validation_this_task": "read-only files; runtime queries only for running profile; no demo or motion test"
+    },
+    {
+      "name": "hybrid025",
+      "entry": {
+        "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/hybrid025/start_navigation_hybrid025_10hz.sh",
+        "observed_path": "/home/whill/Shaki_ws/nav2_humble_update_20261031/hybrid025_20261101/start_navigation_hybrid025_10hz.sh",
+        "sha256": "056ecf9bed5b952c3204e8b00ce64b618a912925cc25681fff24774128a4a584",
+        "size_bytes": 2765
+      },
+      "config": {
+        "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/hybrid025/hardware_hybrid025_10hz_analytic125.yaml",
+        "observed_path": "/home/whill/Shaki_ws/nav2_humble_update_20261031/hybrid025_20261101/hardware_hybrid025_10hz_analytic125.yaml",
+        "sha256": "31454ccc7570f0264ee96fb70b4e0eb15fab87730c26ec66c104652c29518dbb",
+        "size_bytes": 9577
+      },
+      "launch": {
+        "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/launch/navigation_dense_candidate.launch.py",
+        "observed_path": "/home/whill/Shaki_ws/nav2_humble_update_20261031/lattice_arc_20261031/navigation_dense_candidate.launch.py",
+        "sha256": "6d2613f0dcf7e98400bda747e425d9d3522e1d4635b3a8b2540cc229019ba874",
+        "size_bytes": 5106
+      },
+      "observed_running_at_runtime_snapshot": false,
+      "shared_dependencies": [
+        "sensor_service",
+        "hardware_bridge",
+        "velocity_interface",
+        "dds"
+      ],
+      "extra_dependency": null,
+      "configured_velocity_smoother": {
+        "deadband_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "feedback": "OPEN_LOOP",
+        "max_accel": [
+          0.33,
+          0.0,
+          0.6
+        ],
+        "max_decel": [
+          -0.33,
+          0.0,
+          -0.6
+        ],
+        "max_velocity": [
+          0.536622219601921,
+          0.0,
+          0.8108854254075847
+        ],
+        "min_velocity": [
+          -0.40367094263942477,
+          0.0,
+          -0.8108854254075847
+        ],
+        "odom_duration": 0.1,
+        "odom_topic": "/wheelchair/odom",
+        "scale_velocities": false,
+        "smoothing_frequency": 20.0,
+        "use_sim_time": false,
+        "velocity_timeout": 0.2
+      },
+      "frames": {
+        "global": "odom",
+        "base": "base_link"
+      },
+      "validation_this_task": "read-only files; runtime queries only for running profile; no demo or motion test"
+    },
+    {
+      "name": "turn_memory",
+      "entry": {
+        "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/turn_memory/start_navigation.sh",
+        "observed_path": "/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/start_navigation.sh",
+        "sha256": "a9f453c4a86a93e4d761efd9fd9f09ceefef816a6609f00373d8bc044be75cc2",
+        "size_bytes": 1674
+      },
+      "config": {
+        "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/turn_memory/navigation.yaml",
+        "observed_path": "/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/navigation.yaml",
+        "sha256": "7d2a2c0d48da9ff52cd1d9af755654d5e08d3af326080ec1529e46633b717404",
+        "size_bytes": 11605
+      },
+      "launch": {
+        "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/turn_memory/navigation.launch.py",
+        "observed_path": "/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/navigation.launch.py",
+        "sha256": "d2cdd9ce72190b809b966ca635dc68e2b30c1c0f5dad5f76ba118a3a06c93a9f",
+        "size_bytes": 1563
+      },
+      "observed_running_at_runtime_snapshot": true,
+      "shared_dependencies": [
+        "sensor_service",
+        "hardware_bridge",
+        "velocity_interface",
+        "dds"
+      ],
+      "extra_dependency": "LaserScanBoxFilter and rotation_shim_deceleration overlay",
+      "configured_velocity_smoother": {
+        "deadband_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "feedback": "OPEN_LOOP",
+        "max_accel": [
+          0.33,
+          0.0,
+          0.8
+        ],
+        "max_decel": [
+          -0.33,
+          0.0,
+          -0.8
+        ],
+        "max_velocity": [
+          0.536622219601921,
+          0.0,
+          0.8108854254075847
+        ],
+        "min_velocity": [
+          -0.40367094263942477,
+          0.0,
+          -0.8108854254075847
+        ],
+        "odom_duration": 0.1,
+        "odom_topic": "/wheelchair/odom",
+        "scale_velocities": false,
+        "smoothing_frequency": 20.0,
+        "use_sim_time": false,
+        "velocity_timeout": 0.2
+      },
+      "frames": {
+        "global": "odom",
+        "base": "base_link"
+      },
+      "validation_this_task": "read-only files; runtime queries only for running profile; no demo or motion test"
+    }
+  ],
+  "runtime_state": {
+    "active_sensor_service": "shaki-nav2-sensors-20261101.service",
+    "active_navigation_service": "shaki-nav2-turn-memory-20261101.service",
+    "sensor_entry": {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/support/first_run/start_sensors.sh",
+      "observed_path": "/home/whill/Shaki_ws/src/WheelChair_ws/first_run/start_sensors.sh",
+      "sha256": "2835322978ce98c778969b8ac2aec8956acb2344458ebf32b69719059db73685",
+      "size_bytes": 404
+    },
+    "sensor_service_pid": 4007,
+    "navigation_service_pid": 18592,
+    "eno1": "eno1             DOWN",
+    "hardware_power": "off, user-confirmed; user reports Odin USB and both MID360 absent since 03:59",
+    "sample_window_seconds": 4,
+    "sample_counts": {
+      "/tf_static": 9,
+      "/whill/controller/status": 4
+    },
+    "controller_status_excerpt": {
+      "armed": true,
+      "direction": "idle",
+      "serial_connected": true,
+      "bluetooth_connected": true,
+      "firmware_test_mode": false,
+      "eye_control_enabled": false,
+      "calibration_sha256": "d515e4c0c0aacaab961e4d5af1f4e94e9345acc84a232ccb18c5548bb2dd64dd"
+    },
+    "navigation_latched_arm_runtime_parameter_present": false,
+    "navigation_latched_arm_current_launch": true
+  },
+  "coordinate_conventions": {
+    "base_link": "rear axle center; +X forward, +Y left, +Z up",
+    "transform": "T_parent_child: p_parent=R*p_child+t",
+    "fixed_axis_rpy_order": "Rz(yaw)*Ry(pitch)*Rx(roll)",
+    "translation_unit": "m",
+    "tf_rpy_unit": "rad",
+    "yaw_positive": "left / counterclockwise seen from +Z",
+    "camera_0": "optical: +Z forward, +X right, +Y down",
+    "nav2_global_frame": "odom",
+    "twist": "linear.x m/s; angular.z rad/s; positive v forward, positive w left"
+  },
+  "static_transforms": [
+    {
+      "parent": "base_link",
+      "child": "lidar",
+      "translation_m": [
+        0.45,
+        0.25,
+        0.65
+      ],
+      "fixed_axis_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "imu",
+      "translation_m": [
+        0.45,
+        0.25,
+        0.65
+      ],
+      "fixed_axis_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "camera_0",
+      "translation_m": [
+        0.457415,
+        0.279663,
+        0.63946
+      ],
+      "fixed_axis_rpy_rad": [
+        -1.564317,
+        0.012941,
+        -1.577013
+      ],
+      "quaternion_xyzw": [
+        -0.4935598521596528,
+        0.5031493842519192,
+        -0.499948750811248,
+        0.5032798585531997
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 5.551115123125783e-17
+    },
+    {
+      "parent": "base_link",
+      "child": "seat_link",
+      "translation_m": [
+        0.27,
+        0,
+        0.42
+      ],
+      "fixed_axis_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "base_footprint",
+      "translation_m": [
+        0,
+        0,
+        -0.036
+      ],
+      "fixed_axis_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "mid360_201_local",
+      "translation_m": [
+        0.55,
+        -0.21,
+        0.32
+      ],
+      "fixed_axis_rpy_rad": [
+        3.141592653589793,
+        -0.017453292519943295,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.9999619230641713,
+        -5.343461882864696e-19,
+        0.008726535498373935,
+        6.123000841748846e-17
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "base_link",
+      "child": "mid360_202_local",
+      "translation_m": [
+        0.55,
+        0.21,
+        0.32
+      ],
+      "fixed_axis_rpy_rad": [
+        3.141592653589793,
+        0,
+        -0.017453292519943295
+      ],
+      "quaternion_xyzw": [
+        0.9999619230641713,
+        -0.008726535498373935,
+        -5.343461882864696e-19,
+        6.123000841748846e-17
+      ],
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+        "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+        "size_bytes": 4799
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "mid360_201_local",
+      "child": "mid360_192_168_86_201",
+      "translation_m": [
+        0,
+        0,
+        0
+      ],
+      "fixed_axis_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "source": {
+        "sourcepath": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py",
+        "observed_path": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py",
+        "sha256": "40b8ab1bd22b498fc9d9ca5a03124d51ddd828a6362bfd26a5c8d43d478f1820",
+        "size_bytes": 1969
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    },
+    {
+      "parent": "mid360_202_local",
+      "child": "mid360_192_168_86_202",
+      "translation_m": [
+        0,
+        0,
+        0
+      ],
+      "fixed_axis_rpy_rad": [
+        0,
+        0,
+        0
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "source": {
+        "sourcepath": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py",
+        "observed_path": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py",
+        "sha256": "40b8ab1bd22b498fc9d9ca5a03124d51ddd828a6362bfd26a5c8d43d478f1820",
+        "size_bytes": 1969
+      },
+      "evidence": "launch source + running process arguments + received transient_local /tf_static agree",
+      "live_quaternion_max_error": 0.0
+    }
+  ],
+  "sensors": {
+    "MID360": {
+      "driver_launch": {
+        "sourcepath": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py",
+        "observed_path": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py",
+        "sha256": "40b8ab1bd22b498fc9d9ca5a03124d51ddd828a6362bfd26a5c8d43d478f1820",
+        "size_bytes": 1969
+      },
+      "loaded_user_config": {
+        "sourcepath": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/config/dual_MID360.json",
+        "observed_path": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/config/dual_MID360.json",
+        "sha256": "89dda12fc6740dc79432b05c377bbc248e6e852966213784c871c4ea6379eef2",
+        "size_bytes": 1125
+      },
+      "runtime_params": {
+        "cmdline_input_bd_code": "",
+        "data_src": 0,
+        "frame_id": "mid360",
+        "lvx_file_path": "",
+        "multi_topic": 1,
+        "output_data_type": 0,
+        "publish_freq": 10.0,
+        "qos_overrides./parameter_events.publisher.depth": 1000,
+        "qos_overrides./parameter_events.publisher.durability": "volatile",
+        "qos_overrides./parameter_events.publisher.history": "keep_last",
+        "qos_overrides./parameter_events.publisher.reliability": "reliable",
+        "use_sim_time": false,
+        "user_config_path": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/config/dual_MID360.json",
+        "xfer_format": 0
+      },
+      "network": {
+        "lidar_summary_info": {
+          "lidar_type": 8
+        },
+        "MID360": {
+          "lidar_net_info": {
+            "cmd_data_port": 56100,
+            "push_msg_port": 56200,
+            "point_data_port": 56300,
+            "imu_data_port": 56400,
+            "log_data_port": 56500
+          },
+          "host_net_info": {
+            "cmd_data_ip": "192.168.86.15",
+            "cmd_data_port": 56101,
+            "push_msg_ip": "192.168.86.15",
+            "push_msg_port": 56201,
+            "point_data_ip": "192.168.86.15",
+            "point_data_port": 56301,
+            "imu_data_ip": "192.168.86.15",
+            "imu_data_port": 56401,
+            "log_data_ip": "",
+            "log_data_port": 56501
+          }
+        },
+        "lidar_configs": [
+          {
+            "ip": "192.168.86.201",
+            "pcl_data_type": 1,
+            "pattern_mode": 0,
+            "extrinsic_parameter": {
+              "roll": 0.0,
+              "pitch": 0.0,
+              "yaw": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
+            }
+          },
+          {
+            "ip": "192.168.86.202",
+            "pcl_data_type": 1,
+            "pattern_mode": 0,
+            "extrinsic_parameter": {
+              "roll": 0.0,
+              "pitch": 0.0,
+              "yaw": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
+            }
+          }
+        ]
+      },
+      "extrinsic_json_units": {
+        "rotation": "degrees",
+        "translation": "mm",
+        "evidence": {
+          "sourcepath": "/home/whill/livox_ws/src/livox_ros_driver2/src/comm/pub_handler.cpp",
+          "observed_path": "/home/whill/livox_ws/src/livox_ros_driver2/src/comm/pub_handler.cpp",
+          "sha256": "4a81276ab8e425619fd58184b4b3ae386d5b07c31598295334b8a18907eaf9da",
+          "size_bytes": 18553
+        }
+      },
+      "extrinsic_note": "driver JSON extrinsics are zero; inverted mounts are applied once via TF",
+      "points_output_unit": "m",
+      "topics": {
+        "right_raw": "/mid360_201/points",
+        "left_raw": "/mid360_202/points",
+        "right_filtered": "/mid360_201/points_filtered",
+        "left_filtered": "/mid360_202/points_filtered"
+      },
+      "fresh_data_observed": false
+    },
+    "Odin": {
+      "driver_config": {
+        "sourcepath": "/home/whill/odin_ws/src/odin_ros_driver/config/control_command.yaml",
+        "observed_path": "/home/whill/odin_ws/install/odin_ros_driver/share/odin_ros_driver/config/control_command.yaml",
+        "sha256": "03ccce26f212643040dda8406ae577ac6d9d316d4900b0644e97ad592a98f1d9",
+        "size_bytes": 7100
+      },
+      "configured_register_keys": {
+        "strict_usb3.0_check": 0,
+        "use_host_ros_time": 1,
+        "streamctrl": 1,
+        "sendrgbcompressed": 1,
+        "sendrgb": 1,
+        "sendrgbundistort": 0,
+        "sendimu": 1,
+        "enable_imu_smooth": 0,
+        "imu_smooth_frequency": 400,
+        "sendodom": 1,
+        "send_odom_baselink_tf": 0,
+        "tf_extra_publish_rate": 0,
+        "senddtof": 1,
+        "cloud_raw_confidence_threshold": 35,
+        "dtof_fps": 100,
+        "rgb_format": 1,
+        "rgb_width": 1600,
+        "rgb_height": 1296,
+        "rgb_fps": 100,
+        "sendcloudslam": 1,
+        "sendcloudrender": 1,
+        "senddepth": 0,
+        "sendreprojection": 0,
+        "sendoverlay": 0,
+        "overlay_reprojected_topic": "/odin1/reprojected_image",
+        "overlay_camera_topic": "/odin1/image/undistorted",
+        "overlay_output_topic": "/odin1/overlay_image",
+        "overlay_alpha": 0.6,
+        "recorddata": 0,
+        "devstatuslog": 1,
+        "save_log": 0,
+        "pubintensitygray": 0,
+        "showpath": 1,
+        "showcamerapose": 0,
+        "custom_map_mode": 1,
+        "custom_init_pos": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "custom_init_pose_search_radius": 4.0,
+        "custom_init_pose_max_rot_deg": 180.0,
+        "relocalization_map_abs_path": "",
+        "mapping_result_dest_dir": "",
+        "mapping_result_file_name": "",
+        "sendimagemask": 0,
+        "image_mask_abs_path": "",
+        "resetalgo": 0
+      },
+      "runtime_calibration": {
+        "sourcepath": "/home/whill/.ros/odin_ros_driver/calib.yaml",
+        "observed_path": "/home/whill/.ros/odin_ros_driver/calib.yaml",
+        "sha256": "8d61df9cb1a194266bc185739fcaa2aaeb537912c58966e039f59559fa678883",
+        "size_bytes": 687
+      },
+      "source_calibration": {
+        "sourcepath": "/home/whill/odin_ws/src/odin_ros_driver/config/calib.yaml",
+        "observed_path": "/home/whill/odin_ws/src/odin_ros_driver/config/calib.yaml",
+        "sha256": "8d61df9cb1a194266bc185739fcaa2aaeb537912c58966e039f59559fa678883",
+        "size_bytes": 687
+      },
+      "install_calibration": {
+        "sourcepath": "/home/whill/odin_ws/src/odin_ros_driver/config/calib.yaml",
+        "observed_path": "/home/whill/odin_ws/install/odin_ros_driver/share/odin_ros_driver/config/calib.yaml",
+        "sha256": "8d61df9cb1a194266bc185739fcaa2aaeb537912c58966e039f59559fa678883",
+        "size_bytes": 687
+      },
+      "runtime_calibration_selection": "ODIN_CALIB_DIR unset; ROS_HOME unset; HOME=/home/whill -> /home/whill/.ros/odin_ros_driver/calib.yaml",
+      "calibration_contents": {
+        "cam_num": 1,
+        "img_topic_0": "/camera/rgb",
+        "Tcl_0": [
+          -0.00621,
+          -0.9999,
+          -0.01294,
+          0.02957,
+          0.00656,
+          0.0129,
+          -0.9999,
+          -0.01097,
+          0.99996,
+          -0.0063,
+          0.00648,
+          -0.00716,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "cam_0": {
+          "cam_model": "FishPoly",
+          "image_width": 1600,
+          "image_height": 1296,
+          "k2": -0.007551629166334483,
+          "k3": 0.018772118877270306,
+          "k4": -0.07294614046554132,
+          "k5": 0.07391419997456718,
+          "k6": -0.039247546775445175,
+          "k7": 0.007142562177994165,
+          "p1": 0.0,
+          "p2": 0.0,
+          "A11": 731.6419279041597,
+          "A12": 0.20538432870345655,
+          "A22": 731.4344733271957,
+          "u0": 790.3923599698114,
+          "v0": 645.3867472402917,
+          "isFast": 0,
+          "numDiff": 3000,
+          "maxIncidentAngle": 120
+        }
+      },
+      "calibration_memory_readback": false,
+      "config_file_ros_parameter_note": "driver source chooses package share/config/control_command.yaml; config_file is a launch override but is absent from declared live parameters",
+      "camera_transform": "T_base_camera=T_base_lidar*inverse(Tcl_0), static numbers fixed in sensors_tf.launch.py",
+      "fresh_data_observed": false,
+      "nav2_uses": "odometry_highfreq/IMU via odom_relay; Odin cloud is not a cloud_to_scan input"
+    }
+  },
+  "processing": {
+    "hardware_bridge_config": {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/hardware_bridge.yaml",
+      "observed_path": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/hardware_bridge.yaml",
+      "sha256": "986e0b39ab48f026b278a1300bed03af3b53cb375806275d756fc02227fdabb8",
+      "size_bytes": 2088
+    },
+    "body_filter_config": {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/body_filter.yaml",
+      "observed_path": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/body_filter.yaml",
+      "sha256": "8a06a39d34632c7f0855237e3f474ab1030588d9a3c30c0e42b75f72201c9920",
+      "size_bytes": 250
+    },
+    "runtime_parameters": {
+      "/body_cloud_filter": {
+        "use_sim_time": false,
+        "body_frame": "base_link",
+        "x_min": -0.15,
+        "x_max": 0.8,
+        "y_min": -0.275,
+        "y_max": 0.275
+      },
+      "/cloud_to_scan": {
+        "use_sim_time": false,
+        "body_bounds": [
+          -0.15,
+          0.8,
+          -0.275,
+          0.275
+        ],
+        "cluster_center_x": 0.27,
+        "cluster_filter_enabled": true,
+        "ground_filter_enabled": true,
+        "ground_z": -0.036,
+        "ground_tolerance": 0.15,
+        "obstacle_height": 0.9,
+        "height_min": 0.217,
+        "height_max": 0.817,
+        "angle_min": -3.14159265,
+        "angle_max": 3.14159265,
+        "angular_resolution": 0.5,
+        "cloud_sync_window": 0.3,
+        "target_frame": "base_link",
+        "right_cloud_topic": "/mid360_201/points_filtered",
+        "left_cloud_topic": "/mid360_202/points_filtered",
+        "lidar_mode": "both"
+      },
+      "/scan_map": {
+        "use_sim_time": false,
+        "resolution": 0.05,
+        "size": 10.0,
+        "max_age": 0.3,
+        "history_window": 0.4,
+        "blind_band": 0.1
+      },
+      "/odom_relay": {
+        "use_sim_time": false,
+        "source_topic": "/odin1/odometry_highfreq",
+        "target_topic": "/wheelchair/odom",
+        "child_frame_id": "base_link",
+        "imu_source_topic": "/odin1/imu",
+        "imu_target_topic": "/wheelchair/imu",
+        "source_linear_in_world": true,
+        "publish_control_center": true
+      },
+      "/scan_to_scan_filter_chain": {
+        "diagnostic_updater.period": 1.0,
+        "diagnostic_updater.use_fqn": false,
+        "filter1.name": "preserve_existing_self_echo_mask",
+        "filter1.params.box_frame": "base_link",
+        "filter1.params.invert": false,
+        "filter1.params.max_x": 0.82,
+        "filter1.params.max_y": 0.35,
+        "filter1.params.max_z": 1.0,
+        "filter1.params.min_x": -0.38,
+        "filter1.params.min_y": -0.35,
+        "filter1.params.min_z": -1.0,
+        "filter1.type": "laser_filters/LaserScanBoxFilter",
+        "qos_overrides./parameter_events.publisher.depth": 1000,
+        "qos_overrides./parameter_events.publisher.durability": "volatile",
+        "qos_overrides./parameter_events.publisher.history": "keep_last",
+        "qos_overrides./parameter_events.publisher.reliability": "reliable",
+        "tf_message_filter_target_frame": "",
+        "tf_message_filter_tolerance": 0.03,
+        "use_sim_time": false
+      }
+    },
+    "cluster": {
+      "link_distance_m": 0.05,
+      "radius_m": 1,
+      "center_base_xy_m": [
+        0.27,
+        0
+      ],
+      "minimum_points": 5,
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/cluster_filter.py",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/cluster_filter.py",
+        "sha256": "a7ae43169bffc382abc01d0d76e866780addc19f83bf298bbcfb9aec28933ae5",
+        "size_bytes": 1092
+      },
+      "note": "startup log says min 4; executable condition is sizes < 5"
+    },
+    "odom_conversion": "source linear velocity is world-frame; rotate to source body, apply TF lever-arm pose/twist/covariance conversion to base_link; preserve source stamp; age gate [-0.05,0.3] s",
+    "scan": "LaserScan base_link, 0.5 degree bin, -pi..pi radians, oldest accepted input stamp, 0.3 s cloud age; scan_time metadata 0.1 s, range_min 0, range_max 1e6 (not physical sensor range)",
+    "map": "OccupancyGrid odom, 0.05 m resolution, 10 m rolling window, 0.4 s history, 0.3 s max_age; self-echo [-0.38,0.82,-0.35,0.35] m; side/rear blind_band 0.1 m is policy free space, not measured visibility",
+    "turn_memory_filter": {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/turn_memory/memory_scan_filter.yaml",
+      "observed_path": "/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/memory_scan_filter.yaml",
+      "sha256": "ca79cb5cf6ff674dc0807468868b7bea442ab71de59a05b07ce6ec01cfc9feab",
+      "size_bytes": 335
+    }
+  },
+  "velocity_interface": {
+    "entry": {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/launch/velocity_interface.launch.py",
+      "observed_path": "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/install/whill_controller/share/whill_controller/launch/velocity_interface.launch.py",
+      "sha256": "6991e4ff71a49f7ff822e514281972db4948075f7a52c50bfd7cdc7d9947ff8e",
+      "size_bytes": 2635
+    },
+    "adapter": {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/cmd_vel_adapter.py",
+      "observed_path": "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/cmd_vel_adapter.py",
+      "sha256": "37d4726c728fa6ca8f2734ec4cc2e32d2b0332c992d64d9c84ce2aa4e5ee5915",
+      "size_bytes": 1568
+    },
+    "mapping_source": {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/velocity_mapping.py",
+      "observed_path": "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/velocity_mapping.py",
+      "sha256": "b395e876184f2c7f0583b5e73bd45c16bd4c1184b72d120a69e7d8a5880974c7",
+      "size_bytes": 2679
+    },
+    "calibration": {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/config/ipad_calibration_20261009.json",
+      "observed_path": "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/install/whill_controller/share/whill_controller/config/ipad_calibration_20261009.json",
+      "sha256": "d515e4c0c0aacaab961e4d5af1f4e94e9345acc84a232ccb18c5548bb2dd64dd",
+      "size_bytes": 2932
+    },
+    "status_calibration_hash_matches": true,
+    "coefficients": {
+      "input_radius_hid_units": 8.0,
+      "forward_mps_per_hid_unit": 0.06707777745024013,
+      "reverse_mps_per_hid_unit": 0.050458867829928096,
+      "turn_radps_per_hid_unit": 0.10136067817594809
+    },
+    "inverse_formula": "x=-w/(8*TURN_GAIN); y=v/(8*(FORWARD_GAIN if v>=0 else REVERSE_GAIN)); divide x,y by max(1,hypot(x,y))",
+    "screen_coordinates": "calibrated bottom-right boundary origin; +x right, +y down; center [-16,-19] HID counts, not pixels/metres",
+    "hid_quantization": "map_input supports substeps 1 or 25; fine_hid_enabled=true and supported=true in status",
+    "runtime_params": {
+      "use_sim_time": false,
+      "serial_port": "/dev/ble2wchair",
+      "baud": 115200,
+      "fine_hid_enabled": true,
+      "control_mode": "free_screen",
+      "whill_mode": true,
+      "hardware_enabled": true,
+      "eye_control_enabled": false,
+      "navigation_control_enabled": true,
+      "native_nav2_mode": true,
+      "navigation_allow_reverse": true,
+      "navigation_hold_to_run": false,
+      "rviz_goal_authority_enabled": false,
+      "navigation_continuous_mapping": true,
+      "keyboard_auto_drag": true,
+      "unified_ui": false,
+      "forward_speed_mps": 0.37171350861287394,
+      "backward_speed_mps": 0.36421911421911424,
+      "left_turn_rate_radps": 0.3887880188826036,
+      "right_turn_rate_radps": 0.40325377156796044,
+      "odometry_requires_button_hold": true,
+      "path_max_points": 3000,
+      "calibration_file": "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/install/whill_controller/share/whill_controller/config/ipad_calibration_20261009.json"
+    },
+    "adapter_runtime_params": {
+      "use_sim_time": false,
+      "cmd_vel_topic": "/wheelchair/nav2/cmd_vel",
+      "output_topic": "/whill/controller/navigation",
+      "base_frame": "base_link",
+      "stamped_input": false
+    },
+    "command_chain": [
+      "/wheelchair/nav2/cmd_vel_raw (Twist)",
+      "/wheelchair/nav2/cmd_vel_smoothed (Twist)",
+      "/wheelchair/nav2/cmd_vel (Twist)",
+      "/whill/controller/navigation (TwistStamped base_link)",
+      "controller/serial /dev/ble2wchair -> ESP32/BLE/iPad"
+    ]
+  },
+  "dds": {
+    "source": {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/support/first_run/dds_profile.env",
+      "observed_path": "/home/whill/Shaki_ws/src/WheelChair_ws/first_run/dds_profile.env",
+      "sha256": "c237c0d0a15ad6689b2c20e817eea85153ff553aae694a11117f31bcd10421ce",
+      "size_bytes": 556
+    },
+    "RMW_IMPLEMENTATION": "rmw_cyclonedds_cpp",
+    "ROS_DOMAIN_ID": 0,
+    "ROS_LOCALHOST_ONLY": 0,
+    "CYCLONEDDS_URI": "unset in inspected running processes",
+    "mapped_libraries": [
+      {
+        "sourcepath": "/home/whill/Shaki_ws/dds_eval_20261030/stage/opt/ros/humble/lib/aarch64-linux-gnu/libddsc.so.0.10.5",
+        "realpath": "/home/whill/Shaki_ws/dds_eval_20261030/stage/opt/ros/humble/lib/aarch64-linux-gnu/libddsc.so.0.10.5",
+        "sha256": "acb8f0e715256a61cf4c3142bdacc82cb65834f53753a1b654d1e0d72d128084",
+        "size_bytes": 1388728
+      },
+      {
+        "sourcepath": "/home/whill/Shaki_ws/dds_eval_20261030/stage/opt/ros/humble/lib/librmw_cyclonedds_cpp.so",
+        "realpath": "/home/whill/Shaki_ws/dds_eval_20261030/stage/opt/ros/humble/lib/librmw_cyclonedds_cpp.so",
+        "sha256": "55fee328896554f5e3a718b63248cb9dab1b6695b576deede80a9194caf1a451",
+        "size_bytes": 395088
+      }
+    ],
+    "note": "task-owned staged Cyclone libraries are required on this host; /opt/ros/humble alone could not load this RMW. Source dds_profile.env for consistent read-only discovery. Sensor UDP IPs are distinct from ROS DDS domain."
+  },
+  "eye_interface": {
+    "connected_to_current_nav2": false,
+    "evidence": [
+      "eye_control_enabled=false in live params and controller status",
+      "no eye/fusion/direction manager nodes observed",
+      "no eye_tracking or eye_control topics discovered in domain 0",
+      "/goal_pose only publisher rviz; /whill/controller/navigation only publisher whill_cmd_vel_adapter"
+    ],
+    "legacy_entry": {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/scripts/run_hardware_eye.sh",
+      "observed_path": "/home/whill/eye_ctrl_wheelchair/scripts/run_hardware_eye.sh",
+      "sha256": "e93a7c1d8bf817203ce51cc6ef357a275addbc946bae3e4e644e4e1dfa7ccb6e",
+      "size_bytes": 6976
+    },
+    "detector_entry": {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/start_fusion.sh",
+      "observed_path": "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/start_fusion.sh",
+      "sha256": "b58d83864556104a4bea800b4b9d36d3f9e69ea5d437e76a1cc873dbda684850",
+      "size_bytes": 908
+    },
+    "fusion_tracker": {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/tools/fusion_tracker.py",
+      "observed_path": "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/tools/fusion_tracker.py",
+      "sha256": "505e7d21fd6565b0108d79ed48ed972e09f5cd9453a343bcf745f2b7d1ece580",
+      "size_bytes": 16796
+    },
+    "receiver": {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/confirm_node.py",
+      "observed_path": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/confirm_node.py",
+      "sha256": "1d8cc6e2340586ae7b77b7b11392528899220e1009231e94d27530b642b30d73",
+      "size_bytes": 19061
+    },
+    "parser": {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/fusion.py",
+      "observed_path": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/fusion.py",
+      "sha256": "9ef8f3a2b3fe928b3572ed43eb9d89205f7bd83b7c72228d538ce66d05e1560b",
+      "size_bytes": 13914
+    },
+    "schema": {
+      "fusion_topic": "/eye_tracking/fusion_samples",
+      "fusion_type": "std_msgs/msg/String JSON schema=1",
+      "horizontal": "dimensionless [-1,+1], negative LEFT, positive RIGHT",
+      "timestamps": "stamp_ns system/ROS epoch ns; source_t local monotonic seconds; session+sequence reject replay",
+      "required_keys": [
+        "schema",
+        "session",
+        "sequence",
+        "stamp_ns",
+        "source_t",
+        "horizontal",
+        "fresh",
+        "calibrated",
+        "open",
+        "motion_valid",
+        "gesture_continuity",
+        "long_close",
+        "blink_event"
+      ],
+      "optional_keys": [
+        "eyes",
+        "input_grace",
+        "left_blink_event",
+        "interaction"
+      ],
+      "legacy_topic": "/eye_tracking/signals std_msgs/msg/Float32MultiArray [horizontal,closed,valid]",
+      "stamped_topic": "/eye_tracking/samples wheelchair_interfaces/msg/EyeSample",
+      "direction_event": "/wheelchair/eye/direction_event wheelchair_interfaces/msg/DirectionEvent",
+      "health": "/wheelchair/eye/health wheelchair_interfaces/msg/InputHealth",
+      "ack": "/wheelchair/intent_ack wheelchair_interfaces/msg/IntentAck",
+      "context": "/wheelchair/navigation_status wheelchair_interfaces/msg/NavigationIntentStatus",
+      "feedback": "/eye_control/feedback std_msgs/msg/String",
+      "start": "/eye_control/start std_msgs/msg/String {session,stamp_ns}",
+      "stale_threshold_seconds": 0.25,
+      "direction_codes": {
+        "START_OR_CONTINUE": 1,
+        "PREFER_LEFT": 2,
+        "PREFER_RIGHT": 3,
+        "CANCEL_PREFERENCE": 4,
+        "STOP": 5,
+        "TURN_AROUND": 6
+      }
+    },
+    "dds_default_detector": {
+      "domain": 58,
+      "localhost_only": 1,
+      "source": {
+        "sourcepath": "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/eye_ros_env.bash",
+        "observed_path": "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/eye_ros_env.bash",
+        "sha256": "739e5dfae1a279e4ed6f0f5db5b761d0da9542275cc6ac3625448a8d49c0efe6",
+        "size_bytes": 613
+      }
+    },
+    "legacy_hardware_wrapper_dds": "sets EYE_ROS_DOMAIN_ID to WHEELCHAIR_ROS_DOMAIN_ID default 0 and EYE_ROS_LOCALHOST_ONLY; does not explicitly force current staged Cyclone RMW",
+    "eye_calibration": "default start performs per-start center calibration; --three-point selects saved profile; no active eye process or calibration loaded was verified; no physical gaze alignment to Odin or Nav2 inferred",
+    "camera_binding": {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/tools/camera_paths.py",
+      "observed_path": "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/tools/camera_paths.py",
+      "sha256": "518fadbc38760603ba500e7c8388bd106cb902c1578295bf3c31bb1e1f4ba94b",
+      "size_bytes": 727
+    },
+    "nav2_exposed_input": "/goal_pose geometry_msgs/PoseStamped in odom; /navigate_to_pose nav2_msgs/action/NavigateToPose; gaze-to-goal/action adapter not wired in inspected profiles",
+    "demo_validated": false
+  },
+  "uncertainties": [
+    "Observed Odin USB detach and missing sensor streams; eno1 DOWN and no MID360/Odin/scan messages in the four-second read-only window. Current fresh frame IDs, frequency, synchronization, physical alignment and data quality cannot be validated.",
+    "Static translations and rotations are configured values verified against latched TF, not newly measured mechanical calibration. Odin base-to-imu and base-to-lidar deliberately share the same identity rotation and translation; their physical coincidence is not independently measured here.",
+    "Odin runtime calib file path is established by driver source plus process environment; runtime/source/install copies have identical hashes. No CALIB load line was recovered from the service journal, so in-memory calibration bytes were not directly read back.",
+    "camera_0 TF is hardcoded to six decimal places in launch, derived in comments from Tcl_0; changing calib.yaml does not automatically update this TF.",
+    "Running processes predate the source relocation and latched-arm patch. navigation_latched_arm is absent from the running node parameter list, although current launch specifies latched_arm:=true. Current disk SHA is not an in-memory Python module SHA.",
+    "The four-second graph snapshot covers domain 0 on this Jetson; no eye integration was observed. It does not establish availability of eye cameras, user calibration or an independently running detector on another DDS domain.",
+    "Legacy eye hardware launch selects its own shared-control stack and Ble2WChair overlay; it is not an adapter that automatically connects gaze to these three Nav2 profiles. Event-to-Nav2 authority/action adapter is not present in these profile entry points.",
+    "Source reorganization and simulation work are concurrent user activities. Each evidence file has a timestamp; this inventory is not an atomic filesystem snapshot and does not certify post-relocation build or simulation success.",
+    "Nav2 source trees contain local changes; Git HEAD alone is not a full content identity. The manifest hashes inspected dependency files, not every Nav2 source file or a complete reproducible build.",
+    "Velocity map coefficients and HID coordinates are configured/model values; no physical response, braking, slip, fine-HID resolution or closed-loop velocity validation was performed."
+  ],
+  "files": [
+    {
+      "sourcepath": "/home/whill/.ros/odin_ros_driver/calib.yaml",
+      "sha256": "8d61df9cb1a194266bc185739fcaa2aaeb537912c58966e039f59559fa678883",
+      "size_bytes": 687,
+      "observed_paths": [
+        "/home/whill/.ros/odin_ros_driver/calib.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/.ros/odin_ros_driver/calib.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/dds_eval_20261030/stage/opt/ros/humble/lib/aarch64-linux-gnu/libddsc.so.0.10.5",
+      "sha256": "acb8f0e715256a61cf4c3142bdacc82cb65834f53753a1b654d1e0d72d128084",
+      "size_bytes": 1388728,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/dds_eval_20261030/stage/opt/ros/humble/lib/aarch64-linux-gnu/libddsc.so.0.10.5"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/dds_eval_20261030/stage/opt/ros/humble/lib/librmw_cyclonedds_cpp.so",
+      "sha256": "55fee328896554f5e3a718b63248cb9dab1b6695b576deede80a9194caf1a451",
+      "size_bytes": 395088,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/dds_eval_20261030/stage/opt/ros/humble/lib/librmw_cyclonedds_cpp.so"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/esp32_velocity_interface/scripts/run.sh",
+      "sha256": "9ed0eabd5ad3d653027c2997fc7483537636683deaf49b39389932254b779055",
+      "size_bytes": 478,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/scripts/run.sh"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/scripts/run.sh"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/esp32_velocity_interface/scripts/set_output_mode.py",
+      "sha256": "cc1833879b5d56eb3ef1d8bc45aa3d16c1a13703a39bdbb8d7a525b22b55f023",
+      "size_bytes": 676,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/scripts/set_output_mode.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/scripts/set_output_mode.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/__init__.py",
+      "sha256": "3ef360fe8917214f2068744fe41f9c39c82b53b3f64c856160557fba067b7b95",
+      "size_bytes": 38,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/__init__.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/__init__.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/calibration_logger.py",
+      "sha256": "dbdcbe903cb989efd554f3b503ed40cdb1572c0ca3e914139e8b35d94d306461",
+      "size_bytes": 19231,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/calibration_logger.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/calibration_logger.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/cmd_vel_adapter.py",
+      "sha256": "37d4726c728fa6ca8f2734ec4cc2e32d2b0332c992d64d9c84ce2aa4e5ee5915",
+      "size_bytes": 1568,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/cmd_vel_adapter.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/cmd_vel_adapter.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/controller_node.py",
+      "sha256": "882e5773ef1e5d325cc96bc7dda2573f8b1fa83b4c4dce5c56e2ad5ffd482463",
+      "size_bytes": 81372,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/controller_node.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/controller_node.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/eye_drive.py",
+      "sha256": "0aa1c4c8badf13e18767a51529dabf5302a9319600c2cfa22e00ce8cb1cbe7d4",
+      "size_bytes": 2248,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/eye_drive.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/eye_drive.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/fine_hid.py",
+      "sha256": "ea3dff39167ce68d50f3caf55377558cdf28b2667775d3a85e2215cc79a70266",
+      "size_bytes": 1277,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/fine_hid.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/fine_hid.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/goal_lease.py",
+      "sha256": "89f4ec6d0f6a202e5ddf75e9a75cb9d7966e57c2ab7775d44256885038d44fcf",
+      "size_bytes": 1329,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/goal_lease.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/goal_lease.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/motion_model.py",
+      "sha256": "61a133c4d5483ce1313ae27cec5e32a41bdc64a94dfcb392aa065444d5748692",
+      "size_bytes": 3852,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/motion_model.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/motion_model.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/physical_keyboard.py",
+      "sha256": "5146f4d21ddcb9f9fdef87457f8f3d649800e900580283838c23efebda427839",
+      "size_bytes": 1620,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/physical_keyboard.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/physical_keyboard.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/serial_connection.py",
+      "sha256": "8b8133dd8dae412d1b096fac32e950f98a883e0c1ecdc6e6662c1f648e21cd73",
+      "size_bytes": 1170,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/serial_connection.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/serial_connection.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/velocity_mapping.py",
+      "sha256": "b395e876184f2c7f0583b5e73bd45c16bd4c1184b72d120a69e7d8a5880974c7",
+      "size_bytes": 2679,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/velocity_mapping.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/arm_latch_20261101/package/whill_controller/velocity_mapping.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/turn_memory_20261101/shim_decel_ws/install/nav2_rotation_shim_controller/lib/libnav2_rotation_shim_controller.so",
+      "sha256": "73e6f6ce13c09bffb75a6ab0e09bd32026ad3ea0182938a9cd3c7e443e62f9ba",
+      "size_bytes": 419912,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/src/WheelChair_ws/runtime/nav2_humble_update_20261031/turn_memory_20261101/shim_decel_ws/install/nav2_rotation_shim_controller/lib/libnav2_rotation_shim_controller.so"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/nav2_overlays/COLCON_IGNORE",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/src/WheelChair_ws/src/nav2_overlays/COLCON_IGNORE"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/src/WheelChair_ws/src/nav2_overlays/COLCON_IGNORE"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/CMakeLists.txt",
+      "sha256": "37d3182f7086ba5745e728f6c1bd5e849fba18fc32f1cb42fb7af407ddc19bfe",
+      "size_bytes": 262,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/CMakeLists.txt"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/CMakeLists.txt"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/behavior_trees/navigate_lattice_10hz.xml",
+      "sha256": "ece1dd96685bec94c1a76f74bf3b1b23f435c5bfb35cc1446f771967d646b824",
+      "size_bytes": 549,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/lattice_arc_20261031/navigate_lattice_10hz.xml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/lattice_arc_20261031/navigate_lattice_10hz.xml"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/launch/navigation_dense_candidate.launch.py",
+      "sha256": "6d2613f0dcf7e98400bda747e425d9d3522e1d4635b3a8b2540cc229019ba874",
+      "size_bytes": 5106,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/lattice_arc_20261031/navigation_dense_candidate.launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/lattice_arc_20261031/navigation_dense_candidate.launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/package.xml",
+      "sha256": "decd22f404fab3e20ecc52589b91d0a413b4e4e28201b211f98a3189017ddfe8",
+      "size_bytes": 493,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/package.xml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/package.xml"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/hybrid025/convert_to_hybrid025.py",
+      "sha256": "8016a39db68d17169e505b7619418f565264be66ccab5a93381b7371b5b3b015",
+      "size_bytes": 5347,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/hybrid025_20261101/convert_to_hybrid025.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/hybrid025_20261101/convert_to_hybrid025.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/hybrid025/hardware_hybrid025_10hz_analytic125.yaml",
+      "sha256": "31454ccc7570f0264ee96fb70b4e0eb15fab87730c26ec66c104652c29518dbb",
+      "size_bytes": 9577,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/hybrid025_20261101/hardware_hybrid025_10hz_analytic125.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/hybrid025_20261101/hardware_hybrid025_10hz_analytic125.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/hybrid025/prepare_analytic125.py",
+      "sha256": "ea5927db994785b99a40eed8b3c5f9dae9b657ec9ed29b2ad53a5f59616c6504",
+      "size_bytes": 4402,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/hybrid025_20261101/prepare_analytic125.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/hybrid025_20261101/prepare_analytic125.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/hybrid025/start_navigation_hybrid025_10hz.sh",
+      "sha256": "056ecf9bed5b952c3204e8b00ce64b618a912925cc25681fff24774128a4a584",
+      "size_bytes": 2765,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/hybrid025_20261101/start_navigation_hybrid025_10hz.sh"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/hybrid025_20261101/start_navigation_hybrid025_10hz.sh"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/lattice/hardware_lattice_10hz.yaml",
+      "sha256": "320ec899c88b998c5dbfbbe342cabf85b32d3c8bac384e0bf00426dfd9c26a72",
+      "size_bytes": 9684,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/hardware_lattice_10hz.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/hardware_lattice_10hz.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/lattice/start_navigation.sh",
+      "sha256": "2c09d0c2492e3a9a34b23a729b2931956086b1b9faf485a68e3369d97da65c30",
+      "size_bytes": 2522,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/start_navigation_lattice_10hz.sh"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/start_navigation_lattice_10hz.sh"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/turn_memory/env.sh",
+      "sha256": "59be0e64ab8ddd9a20b680d418426c59ba9951639c9322ac5c4f827f189145ff",
+      "size_bytes": 668,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/env.sh"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/env.sh"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/turn_memory/memory_scan_filter.yaml",
+      "sha256": "ca79cb5cf6ff674dc0807468868b7bea442ab71de59a05b07ce6ec01cfc9feab",
+      "size_bytes": 335,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/memory_scan_filter.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/memory_scan_filter.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/turn_memory/navigation.launch.py",
+      "sha256": "d2cdd9ce72190b809b966ca635dc68e2b30c1c0f5dad5f76ba118a3a06c93a9f",
+      "size_bytes": 1563,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/navigation.launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/navigation.launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/turn_memory/navigation.yaml",
+      "sha256": "7d2a2c0d48da9ff52cd1d9af755654d5e08d3af326080ec1529e46633b717404",
+      "size_bytes": 11605,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/navigation.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/navigation.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/profiles/turn_memory/start_navigation.sh",
+      "sha256": "a9f453c4a86a93e4d761efd9fd9f09ceefef816a6609f00373d8bc044be75cc2",
+      "size_bytes": 1674,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/start_navigation.sh"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/nav2_humble_update_20261031/turn_memory_20261101/start_navigation.sh"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/support/first_run/dds_profile.env",
+      "sha256": "c237c0d0a15ad6689b2c20e817eea85153ff553aae694a11117f31bcd10421ce",
+      "size_bytes": 556,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/src/WheelChair_ws/first_run/dds_profile.env"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/src/WheelChair_ws/first_run/dds_profile.env"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/support/first_run/start_rviz.sh",
+      "sha256": "36f852f522a040c7f71eb593d5f4302888d01704c44019e83da9882e34ca96a3",
+      "size_bytes": 290,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/src/WheelChair_ws/first_run/start_rviz.sh"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/src/WheelChair_ws/first_run/start_rviz.sh"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/wheelchair_navigation/support/first_run/start_sensors.sh",
+      "sha256": "2835322978ce98c778969b8ac2aec8956acb2344458ebf32b69719059db73685",
+      "size_bytes": 404,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/src/WheelChair_ws/first_run/start_sensors.sh"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/src/WheelChair_ws/first_run/start_sensors.sh"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/config/controller.yaml",
+      "sha256": "2e862542aa49633179e098aa97fdbb8c8251a9e0db034174bdec90a0376b295b",
+      "size_bytes": 412,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/install/whill_controller/share/whill_controller/config/controller.yaml",
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/config/controller.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/config/controller.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/config/default_calibration.json",
+      "sha256": "0a7cbd045423c5fb751ce7de7db08e32812c3ca4a35a02fdec9f0aac0338ea04",
+      "size_bytes": 2324,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/install/whill_controller/share/whill_controller/config/default_calibration.json",
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/config/default_calibration.json"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/config/default_calibration.json"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/config/dynamics_reference.yaml",
+      "sha256": "5cdff3037742af9dce54ae4c82fc07cb74a40c7e1097dd897b8eba7ed82d18e7",
+      "size_bytes": 816,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/config/dynamics_reference.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/config/dynamics_reference.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/config/ipad_calibration_20261009.json",
+      "sha256": "d515e4c0c0aacaab961e4d5af1f4e94e9345acc84a232ccb18c5548bb2dd64dd",
+      "size_bytes": 2932,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/install/whill_controller/share/whill_controller/config/ipad_calibration_20261009.json",
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/config/ipad_calibration_20261009.json"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/config/ipad_calibration_20261009.json"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/config/measured_dynamics.yaml",
+      "sha256": "a8ffab8e84474f1d60eda7f816c25ddb8027bf6946ea4927ccb0099ad8c863cf",
+      "size_bytes": 16433,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/install/whill_controller/share/whill_controller/config/measured_dynamics.yaml",
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/config/measured_dynamics.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/config/measured_dynamics.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/launch/calibration.launch.py",
+      "sha256": "0ed57757806b0135163f0e214fc1427237418aa1f84b3f77169c26139bc23159",
+      "size_bytes": 1321,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/launch/calibration.launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/launch/calibration.launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/launch/controller.launch.py",
+      "sha256": "5951b733fcb3f89b97ea82ac2301631bdf961297db55bb35e23b516a23452fd3",
+      "size_bytes": 2677,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/launch/controller.launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/launch/controller.launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/launch/velocity_interface.launch.py",
+      "sha256": "6991e4ff71a49f7ff822e514281972db4948075f7a52c50bfd7cdc7d9947ff8e",
+      "size_bytes": 2635,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/install/whill_controller/share/whill_controller/launch/velocity_interface.launch.py",
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/launch/velocity_interface.launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/launch/velocity_interface.launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/package.xml",
+      "sha256": "0a92837c214425084e2fd9250ecdcf0a54d3a80e9a346a0ba7099b40c800bead",
+      "size_bytes": 1049,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/package.xml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/package.xml"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/setup.py",
+      "sha256": "c16c554a2417361cdbfccfb5ceeb8b52219c4866bbe6ab81bbfaa6137d81d5e3",
+      "size_bytes": 1157,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/setup.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/setup.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/__init__.py",
+      "sha256": "3ef360fe8917214f2068744fe41f9c39c82b53b3f64c856160557fba067b7b95",
+      "size_bytes": 38,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/__init__.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/__init__.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/calibration_logger.py",
+      "sha256": "dbdcbe903cb989efd554f3b503ed40cdb1572c0ca3e914139e8b35d94d306461",
+      "size_bytes": 19231,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/calibration_logger.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/calibration_logger.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/cmd_vel_adapter.py",
+      "sha256": "37d4726c728fa6ca8f2734ec4cc2e32d2b0332c992d64d9c84ce2aa4e5ee5915",
+      "size_bytes": 1568,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/cmd_vel_adapter.py",
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/build/whill_controller/whill_controller/cmd_vel_adapter.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/cmd_vel_adapter.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/controller_node.py",
+      "sha256": "882e5773ef1e5d325cc96bc7dda2573f8b1fa83b4c4dce5c56e2ad5ffd482463",
+      "size_bytes": 81372,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/controller_node.py",
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/build/whill_controller/whill_controller/controller_node.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/controller_node.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/eye_drive.py",
+      "sha256": "0aa1c4c8badf13e18767a51529dabf5302a9319600c2cfa22e00ce8cb1cbe7d4",
+      "size_bytes": 2248,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/eye_drive.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/eye_drive.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/fine_hid.py",
+      "sha256": "ea3dff39167ce68d50f3caf55377558cdf28b2667775d3a85e2215cc79a70266",
+      "size_bytes": 1277,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/fine_hid.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/fine_hid.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/goal_lease.py",
+      "sha256": "89f4ec6d0f6a202e5ddf75e9a75cb9d7966e57c2ab7775d44256885038d44fcf",
+      "size_bytes": 1329,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/goal_lease.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/goal_lease.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/motion_model.py",
+      "sha256": "61a133c4d5483ce1313ae27cec5e32a41bdc64a94dfcb392aa065444d5748692",
+      "size_bytes": 3852,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/motion_model.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/motion_model.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/physical_keyboard.py",
+      "sha256": "5146f4d21ddcb9f9fdef87457f8f3d649800e900580283838c23efebda427839",
+      "size_bytes": 1620,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/physical_keyboard.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/physical_keyboard.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/serial_connection.py",
+      "sha256": "8b8133dd8dae412d1b096fac32e950f98a883e0c1ecdc6e6662c1f648e21cd73",
+      "size_bytes": 1170,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/serial_connection.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/serial_connection.py"
+    },
+    {
+      "sourcepath": "/home/whill/Shaki_ws/src/WheelChair_ws/src/whill_controller/whill_controller/velocity_mapping.py",
+      "sha256": "b395e876184f2c7f0583b5e73bd45c16bd4c1184b72d120a69e7d8a5880974c7",
+      "size_bytes": 2679,
+      "observed_paths": [
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/velocity_mapping.py",
+        "/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/build/whill_controller/whill_controller/velocity_mapping.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/Shaki_ws/esp32_velocity_interface/ros2_ws/src/whill_controller/whill_controller/velocity_mapping.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/eye_ros_env.bash",
+      "sha256": "739e5dfae1a279e4ed6f0f5db5b761d0da9542275cc6ac3625448a8d49c0efe6",
+      "size_bytes": 613,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/eye_ros_env.bash"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/projects/EYETLE/eye_ros_env.bash"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/start_fusion.sh",
+      "sha256": "b58d83864556104a4bea800b4b9d36d3f9e69ea5d437e76a1cc873dbda684850",
+      "size_bytes": 908,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/start_fusion.sh"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/projects/EYETLE/start_fusion.sh"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/tools/camera_paths.py",
+      "sha256": "518fadbc38760603ba500e7c8388bd106cb902c1578295bf3c31bb1e1f4ba94b",
+      "size_bytes": 727,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/tools/camera_paths.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/projects/EYETLE/tools/camera_paths.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/tools/fusion_tracker.py",
+      "sha256": "505e7d21fd6565b0108d79ed48ed972e09f5cd9453a343bcf745f2b7d1ece580",
+      "size_bytes": 16796,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/projects/EYETLE/tools/fusion_tracker.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/projects/EYETLE/tools/fusion_tracker.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/scripts/run_hardware_eye.sh",
+      "sha256": "e93a7c1d8bf817203ce51cc6ef357a275addbc946bae3e4e644e4e1dfa7ccb6e",
+      "size_bytes": 6976,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/scripts/run_hardware_eye.sh"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/scripts/run_hardware_eye.sh"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/all_sensors.launch.py",
+      "sha256": "f30e6dba8d1b8086af6f04522f4969f3bf478eda0b9de5125273f393bd496862",
+      "size_bytes": 1923,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/sensor_visualization/all_sensors.launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/sensor_visualization/all_sensors.launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/body_cloud_filter.py",
+      "sha256": "faf761f69d53e3e74da29be90a1a58a24713bf2074d03d62e21b89848446df81",
+      "size_bytes": 4749,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/sensor_visualization/body_cloud_filter.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/sensor_visualization/body_cloud_filter.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/body_filter.yaml",
+      "sha256": "8a06a39d34632c7f0855237e3f474ab1030588d9a3c30c0e42b75f72201c9920",
+      "size_bytes": 250,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/sensor_visualization/body_filter.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/sensor_visualization/body_filter.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/mid360_201.json",
+      "sha256": "e5a042398602b545d787867e86cfaf70c1bd6ab0044a8d39448d28641021c772",
+      "size_bytes": 882,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/sensor_visualization/mid360_201.json"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/sensor_visualization/mid360_201.json"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/mid360_202.json",
+      "sha256": "dbbe27c661b76c04dbd95264d34dfdcd3a899e4a7f9f7039dcc1a63aa4ee4cd3",
+      "size_bytes": 882,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/sensor_visualization/mid360_202.json"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/sensor_visualization/mid360_202.json"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/rviz_stream_watchdog.py",
+      "sha256": "298b2ac4537428176ae4fcca3892d53c9699f6f2d40efd62c62363faff3d66bd",
+      "size_bytes": 3556,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/sensor_visualization/rviz_stream_watchdog.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/sensor_visualization/rviz_stream_watchdog.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py",
+      "sha256": "375708a0bc976e2b07bcf11006d54fe72cf73e4637ac338479acadded42d1596",
+      "size_bytes": 4799,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/sensor_visualization/sensors_tf.launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/single_mid360.launch.py",
+      "sha256": "ca3a6d131737746def4057010282055cc7cf5c0e9eaccd2c891db26d7f2688ea",
+      "size_bytes": 1700,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/sensor_visualization/single_mid360.launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/sensor_visualization/single_mid360.launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/start_sensors.sh",
+      "sha256": "a2484c0f734577d14f1ab238f2a958031a9216d152df4f3d900af814b7e819da",
+      "size_bytes": 2307,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/sensor_visualization/start_sensors.sh"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/sensor_visualization/start_sensors.sh"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/sensor_visualization/test_body_filter.py",
+      "sha256": "8b0a4365065c1ffaddde2b188a140a93765f8fd0751eea96500668fee530ccc8",
+      "size_bytes": 2851,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/sensor_visualization/test_body_filter.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/sensor_visualization/test_body_filter.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/scripts/env.sh",
+      "sha256": "2ab64343d2eeee27c7b9508d27c9c02786a8ab35e33edce16c0b6b9307324965",
+      "size_bytes": 2633,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/scripts/env.sh"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/scripts/env.sh"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/config/eye.yaml",
+      "sha256": "c908becd705c563c765a9f13043ce5d786c10039ae4cfb3716e89daf698f3253",
+      "size_bytes": 453,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/config/eye.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/config/eye.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/__init__.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/__init__.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/confirm.py",
+      "sha256": "e7b8af6ca25230f2956a33c0e0403a51fb8deb10ebbe620b781f0c54bf289d6d",
+      "size_bytes": 10767,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/confirm.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/confirm.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/confirm_node.py",
+      "sha256": "1d8cc6e2340586ae7b77b7b11392528899220e1009231e94d27530b642b30d73",
+      "size_bytes": 19061,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/confirm_node.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/confirm_node.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/core.py",
+      "sha256": "c9d3bf41edc01d40698ed53dc2a39f83363f4e97ae5f86cb5e8f04a73c05daf2",
+      "size_bytes": 7403,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/core.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/core.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/fusion.py",
+      "sha256": "9ef8f3a2b3fe928b3572ed43eb9d89205f7bd83b7c72228d538ce66d05e1560b",
+      "size_bytes": 13914,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/fusion.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/fusion.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/mock.py",
+      "sha256": "efb4bbd3c3f1c45a263b64b87a7df291a11dba9bd4d2d97acc2750a7c17a140b",
+      "size_bytes": 1949,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/mock.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/mock.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/node.py",
+      "sha256": "f295e05fc912812dfa7dcf08a62da5cf05272b117d2616fbb97041b1cfc4c62e",
+      "size_bytes": 6246,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/node.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/node.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/resume.py",
+      "sha256": "375e177cc6d79a28ebb2a5450ebe8461f95252fb47431c669ad1016e3322a631",
+      "size_bytes": 1655,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/resume.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/eye_shared_control/resume.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/launch/eye.launch.py",
+      "sha256": "b3f878bea0b55e6ca984522f11a715dcfd0cec7043d1b68729b3b975b2fbb7ec",
+      "size_bytes": 1095,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/launch/eye.launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/launch/eye.launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/package.xml",
+      "sha256": "55fb2fd694b16f6197021063a1af48569132c939661109f721de090b6adf4392",
+      "size_bytes": 635,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/package.xml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/package.xml"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/setup.py",
+      "sha256": "8b211ee223a97c7ec19480145b4513109c5f0ab951fa6ae69c902c78a9fe3d74",
+      "size_bytes": 881,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/setup.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/eye_shared_control/setup.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/launch/shared.launch.py",
+      "sha256": "c607da6813d2f74701487578e823325f9bd4470eb8194f085ebc4816c43b7e83",
+      "size_bytes": 7313,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/launch/shared.launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/launch/shared.launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/setup.py",
+      "sha256": "03253769d82dbdc83f00eae128cb05ba8813f0ef74c8c4dd79f49b53e6e069eb",
+      "size_bytes": 1097,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/setup.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/setup.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/continuous_nav.py",
+      "sha256": "b340b173d43fca954aec0c304cb0dffa66fc141a18a7c14c18fd72e740715c3e",
+      "size_bytes": 6045,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/continuous_nav.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/continuous_nav.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/direction_input.py",
+      "sha256": "d5e238d06233d628326f7d1d1c1f956d175534ea71a987cd1c8cac64f355d296",
+      "size_bytes": 10341,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/direction_input.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/direction_input.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/direction_manager.py",
+      "sha256": "31e3369b0e00204e7d0a80d11fa613a9b92da0253ab4dce941130cd8642c481b",
+      "size_bytes": 6518,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/direction_manager.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/direction_manager.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/inputs.py",
+      "sha256": "0470ce3fc495122ef527c9d5fe436b060eaec81d4a2a4da8ada264d6fb66e5ab",
+      "size_bytes": 8944,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/inputs.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/inputs.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/nav2_transport.py",
+      "sha256": "960e5985eec45c50b76d33d1bedfc3f3e6542fcca3159ad078db1a87896d1c14",
+      "size_bytes": 10093,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/nav2_transport.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/nav2_transport.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/nodes.py",
+      "sha256": "71cb4169a5f7e282bc80f02bc600f0a397f386e9b3cb83f41a3b6de65d433421",
+      "size_bytes": 25713,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/nodes.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/nodes.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/pose_goal.py",
+      "sha256": "e1353de03ba92ee18c7301a221319ee26b82723a3f455d330d908af25e845e7e",
+      "size_bytes": 3388,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/pose_goal.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/pose_goal.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/protocol.py",
+      "sha256": "88b7d105db277c2cf788bc97b3001a64d24aeb0cbe626dfe32d4568564929640",
+      "size_bytes": 2471,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/protocol.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/protocol.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/task_node.py",
+      "sha256": "6835c626956f0da57ace010071ec77d5f6935df65c3c5a4857a074c5d8326551",
+      "size_bytes": 15569,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/task_node.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_control/wheelchair_control/task_node.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/control.yaml",
+      "sha256": "58f4fb42f323d363372562a8465003ddd57fe7b9d535109932467feb91a860e7",
+      "size_bytes": 752,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/control.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/control.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/hardware_bridge.yaml",
+      "sha256": "986e0b39ab48f026b278a1300bed03af3b53cb375806275d756fc02227fdabb8",
+      "size_bytes": 2088,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/install/wheelchair_hardware_bridge/share/wheelchair_hardware_bridge/config/hardware_bridge.yaml",
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/hardware_bridge.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/hardware_bridge.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/hardware_timing.yaml",
+      "sha256": "c4a2259f868fb7143d0a193d43f83f9648576fda9467f5a3dfc39e8b7050f303",
+      "size_bytes": 689,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/hardware_timing.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/hardware_timing.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/narrow_control.yaml",
+      "sha256": "35eb47c6a2b4f73ab8d33b647b192f057523bc794855b6e372ea05dd9c314244",
+      "size_bytes": 1139,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/narrow_control.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/narrow_control.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/nav2_hardware.yaml",
+      "sha256": "9a2714e7a01cc964292d0bf8f64bbb4eaf4b67882c7a33ee3fd69cb88c736397",
+      "size_bytes": 1194,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/nav2_hardware.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/config/nav2_hardware.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/launch/hardware.launch.py",
+      "sha256": "8f26d1e175bb69d55e2cea93bfe52e8f0a9cab96094d106ec80bc087e8cfa65f",
+      "size_bytes": 17087,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/launch/hardware.launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/launch/hardware.launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/launch/single_lidar_costmap_test.launch.py",
+      "sha256": "eebdd42ab7bb9824593fa4213ee3437db0f799e8e06982c5173bb914489d523e",
+      "size_bytes": 3275,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/launch/single_lidar_costmap_test.launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/launch/single_lidar_costmap_test.launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/package.xml",
+      "sha256": "eb7ccde8eff024e412a43376cf3e6eb6e462c1974b5b64b64e2b3b1570e480d3",
+      "size_bytes": 1074,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/package.xml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/package.xml"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/setup.py",
+      "sha256": "f493f4baf4205d9159ac3133e032db401f26d8a9bb9e8d94574c4305af58fcb0",
+      "size_bytes": 1068,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/setup.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/setup.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/__init__.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/__init__.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/cloud_to_scan.py",
+      "sha256": "79a124ca30e5cc3c0e8ef94d6dda7e1b9b5aefd91af7b13dcce23fcf02a1724d",
+      "size_bytes": 11330,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/cloud_to_scan.py",
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/build/wheelchair_hardware_bridge/wheelchair_hardware_bridge/cloud_to_scan.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/cloud_to_scan.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/cluster_filter.py",
+      "sha256": "a7ae43169bffc382abc01d0d76e866780addc19f83bf298bbcfb9aec28933ae5",
+      "size_bytes": 1092,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/cluster_filter.py",
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/build/wheelchair_hardware_bridge/wheelchair_hardware_bridge/cluster_filter.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/cluster_filter.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/ground_filter.py",
+      "sha256": "76d8df3aa73e16bfbb214abfa1ab5f48f23c0a868fd0d8c97eab15e233e21cbe",
+      "size_bytes": 1583,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/ground_filter.py",
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/build/wheelchair_hardware_bridge/wheelchair_hardware_bridge/ground_filter.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/ground_filter.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/odom_relay.py",
+      "sha256": "27a7908d058e712a31fb4250a84d2f604b5430624ea9260c1b0ed70f19e818c2",
+      "size_bytes": 6573,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/odom_relay.py",
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/build/wheelchair_hardware_bridge/wheelchair_hardware_bridge/odom_relay.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/odom_relay.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/preflight.py",
+      "sha256": "953b392dca33120f16f3f5135ef302a1311a513129c0a6cd2834475136e77a64",
+      "size_bytes": 6282,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/preflight.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/preflight.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/scan_map.py",
+      "sha256": "f9ed81816345e739e75678dc563d35a9418a65f84e177abc0a6d7a4e0bd882c3",
+      "size_bytes": 10404,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/scan_map.py",
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/build/wheelchair_hardware_bridge/wheelchair_hardware_bridge/scan_map.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/scan_map.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/twist_to_key.py",
+      "sha256": "a65554a4c11b757ea97f21a9482ef3e65389ac74215b64dc755710402d0e6326",
+      "size_bytes": 2475,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/twist_to_key.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_hardware_bridge/wheelchair_hardware_bridge/twist_to_key.py"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_interfaces/msg/DirectionEvent.msg",
+      "sha256": "4bc659c479d384348632406f70198e495dc32098f8da89ec2ce92de1093f16b0",
+      "size_bytes": 239,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_interfaces/msg/DirectionEvent.msg"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_interfaces/msg/DirectionEvent.msg"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_interfaces/msg/EyeSample.msg",
+      "sha256": "57883682eb262dfb9743e49c2311db74d359c91ac284ef3a4f67b4d7179370fb",
+      "size_bytes": 106,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_interfaces/msg/EyeSample.msg"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_interfaces/msg/EyeSample.msg"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_interfaces/msg/InputHealth.msg",
+      "sha256": "d05564a1e823814d5d589b4b8d4d041257daf250486fcb31496955e915df80df",
+      "size_bytes": 186,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_interfaces/msg/InputHealth.msg"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_interfaces/msg/InputHealth.msg"
+    },
+    {
+      "sourcepath": "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_interfaces/msg/IntentAck.msg",
+      "sha256": "fb254d7de2a208e597cf3aff8cf48c71c26d030386a5922dac49147de7e3a2fa",
+      "size_bytes": 190,
+      "observed_paths": [
+        "/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_interfaces/msg/IntentAck.msg"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/eye_ctrl_wheelchair/wheelchair_shared_ws/src/wheelchair_interfaces/msg/IntentAck.msg"
+    },
+    {
+      "sourcepath": "/home/whill/livox_ws/install/livox_ros_driver2/lib/livox_ros_driver2/livox_ros_driver2_node",
+      "sha256": "65d88f165f8053cdb03c6bf10d31326d65371833715d2f847d3ac9d7151cd838",
+      "size_bytes": 56232,
+      "observed_paths": [
+        "/home/whill/livox_ws/install/livox_ros_driver2/lib/livox_ros_driver2/livox_ros_driver2_node"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately"
+    },
+    {
+      "sourcepath": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/config/dual_MID360.json",
+      "sha256": "89dda12fc6740dc79432b05c377bbc248e6e852966213784c871c4ea6379eef2",
+      "size_bytes": 1125,
+      "observed_paths": [
+        "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/config/dual_MID360.json"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/config/dual_MID360.json"
+    },
+    {
+      "sourcepath": "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py",
+      "sha256": "40b8ab1bd22b498fc9d9ca5a03124d51ddd828a6362bfd26a5c8d43d478f1820",
+      "size_bytes": 1969,
+      "observed_paths": [
+        "/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/livox_ws/install/livox_ros_driver2/share/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/livox_ws/src/livox_ros_driver2/config/dual_MID360.json",
+      "sha256": "89dda12fc6740dc79432b05c377bbc248e6e852966213784c871c4ea6379eef2",
+      "size_bytes": 1125,
+      "observed_paths": [
+        "/home/whill/livox_ws/src/livox_ros_driver2/config/dual_MID360.json"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/livox_ws/src/livox_ros_driver2/config/dual_MID360.json"
+    },
+    {
+      "sourcepath": "/home/whill/livox_ws/src/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py",
+      "sha256": "40b8ab1bd22b498fc9d9ca5a03124d51ddd828a6362bfd26a5c8d43d478f1820",
+      "size_bytes": 1969,
+      "observed_paths": [
+        "/home/whill/livox_ws/src/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/livox_ws/src/livox_ros_driver2/launch_ROS2/dual_mid360_launch.py"
+    },
+    {
+      "sourcepath": "/home/whill/livox_ws/src/livox_ros_driver2/src/comm/pub_handler.cpp",
+      "sha256": "4a81276ab8e425619fd58184b4b3ae386d5b07c31598295334b8a18907eaf9da",
+      "size_bytes": 18553,
+      "observed_paths": [
+        "/home/whill/livox_ws/src/livox_ros_driver2/src/comm/pub_handler.cpp"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/livox_ws/src/livox_ros_driver2/src/comm/pub_handler.cpp"
+    },
+    {
+      "sourcepath": "/home/whill/livox_ws/src/livox_ros_driver2/src/parse_cfg_file/parse_livox_lidar_cfg.cpp",
+      "sha256": "ce7cc5df5f7e09768a2d256f0d1cae30ae9c6214d821be95036311cef08912ed",
+      "size_bytes": 5293,
+      "observed_paths": [
+        "/home/whill/livox_ws/src/livox_ros_driver2/src/parse_cfg_file/parse_livox_lidar_cfg.cpp"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/livox_ws/src/livox_ros_driver2/src/parse_cfg_file/parse_livox_lidar_cfg.cpp"
+    },
+    {
+      "sourcepath": "/home/whill/odin_ws/install/odin_ros_driver/lib/odin_ros_driver/host_sdk_sample",
+      "sha256": "e6701d8596c52c0ec835c6aa5f75e5ee85c557a6b0e86a00c091027cb52f2f0c",
+      "size_bytes": 27728536,
+      "observed_paths": [
+        "/home/whill/odin_ws/install/odin_ros_driver/lib/odin_ros_driver/host_sdk_sample"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately"
+    },
+    {
+      "sourcepath": "/home/whill/odin_ws/src/odin_ros_driver/config/calib.yaml",
+      "sha256": "8d61df9cb1a194266bc185739fcaa2aaeb537912c58966e039f59559fa678883",
+      "size_bytes": 687,
+      "observed_paths": [
+        "/home/whill/odin_ws/install/odin_ros_driver/share/odin_ros_driver/config/calib.yaml",
+        "/home/whill/odin_ws/src/odin_ros_driver/config/calib.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/odin_ws/src/odin_ros_driver/config/calib.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/odin_ws/src/odin_ros_driver/config/control_command.yaml",
+      "sha256": "03ccce26f212643040dda8406ae577ac6d9d316d4900b0644e97ad592a98f1d9",
+      "size_bytes": 7100,
+      "observed_paths": [
+        "/home/whill/odin_ws/install/odin_ros_driver/share/odin_ros_driver/config/control_command.yaml",
+        "/home/whill/odin_ws/src/odin_ros_driver/config/control_command.yaml"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/odin_ws/src/odin_ros_driver/config/control_command.yaml"
+    },
+    {
+      "sourcepath": "/home/whill/odin_ws/src/odin_ros_driver/include/odin_calib_path.h",
+      "sha256": "19ccf1d46562b7251be82649dc0fcbf7b80f44e1c03ef7ccfb8bc94a97d2fafa",
+      "size_bytes": 1780,
+      "observed_paths": [
+        "/home/whill/odin_ws/src/odin_ros_driver/include/odin_calib_path.h"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/odin_ws/src/odin_ros_driver/include/odin_calib_path.h"
+    },
+    {
+      "sourcepath": "/home/whill/odin_ws/src/odin_ros_driver/src/host_sdk_sample.cpp",
+      "sha256": "59b0f051747614309e1308f302d06818496ff38a50f2a25504cc49a4f00d0cc0",
+      "size_bytes": 122065,
+      "observed_paths": [
+        "/home/whill/odin_ws/src/odin_ros_driver/src/host_sdk_sample.cpp"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/odin_ws/src/odin_ros_driver/src/host_sdk_sample.cpp"
+    },
+    {
+      "sourcepath": "/home/whill/odin_ws/src/odin_ros_driver/src/yaml_parser.cpp",
+      "sha256": "32d2484500adb5ae19edc99e00b294d352394bc22da1e7ec2e60ba776f5b7742",
+      "size_bytes": 11046,
+      "observed_paths": [
+        "/home/whill/odin_ws/src/odin_ros_driver/src/yaml_parser.cpp"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/home/whill/odin_ws/src/odin_ros_driver/src/yaml_parser.cpp"
+    },
+    {
+      "sourcepath": "/tmp/launch_params_3oal_yaf",
+      "sha256": "411b82d5e6c5d2cff66237aae6d5d26f20b199435acd3dda8c5d6438a7d3c6c9",
+      "size_bytes": 135,
+      "observed_paths": [
+        "/tmp/launch_params_3oal_yaf"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/launch_params_3oal_yaf"
+    },
+    {
+      "sourcepath": "/tmp/launch_params_555mu1au",
+      "sha256": "f1d1500d52455c6f6fb40d47ca57225da0d57e9ddbc20cd08f8a58d7e8d06689",
+      "size_bytes": 315,
+      "observed_paths": [
+        "/tmp/launch_params_555mu1au"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/launch_params_555mu1au"
+    },
+    {
+      "sourcepath": "/tmp/launch_params_740f_0w6",
+      "sha256": "b21c49e50b2f3fedc302a95a5d85492ae86f46b9813357e954ceaaa3b51d86bd",
+      "size_bytes": 48,
+      "observed_paths": [
+        "/tmp/launch_params_740f_0w6"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/launch_params_740f_0w6"
+    },
+    {
+      "sourcepath": "/tmp/launch_params__clsuqfk",
+      "sha256": "4d61bcb37b0a248dcf4298e318da7fcd98c1943d7aa5d2627194d548bafea019",
+      "size_bytes": 93,
+      "observed_paths": [
+        "/tmp/launch_params__clsuqfk"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/launch_params__clsuqfk"
+    },
+    {
+      "sourcepath": "/tmp/launch_params_twev57uc",
+      "sha256": "0b4aa52cda7adbde1e1a63014cc4b4d0371c7a418ead4d446edbf37f5af9b87b",
+      "size_bytes": 255,
+      "observed_paths": [
+        "/tmp/launch_params_twev57uc"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/launch_params_twev57uc"
+    },
+    {
+      "sourcepath": "/tmp/launch_params_ylnjodif",
+      "sha256": "44b96a79501f5e431fcb5b4eb7a7422275f8fdde07f67aa97323f65a1c11e1b6",
+      "size_bytes": 566,
+      "observed_paths": [
+        "/tmp/launch_params_ylnjodif"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/launch_params_ylnjodif"
+    },
+    {
+      "sourcepath": "/tmp/tmp8kluqj63",
+      "sha256": "261cad8c9135b346fe6e7af1661f466f279c19114874cf8208e9a50052fcb06f",
+      "size_bytes": 11607,
+      "observed_paths": [
+        "/tmp/tmp8kluqj63"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/tmp8kluqj63"
+    },
+    {
+      "sourcepath": "/tmp/tmpjk0ngfla",
+      "sha256": "261cad8c9135b346fe6e7af1661f466f279c19114874cf8208e9a50052fcb06f",
+      "size_bytes": 11607,
+      "observed_paths": [
+        "/tmp/tmpjk0ngfla"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/tmpjk0ngfla"
+    },
+    {
+      "sourcepath": "/tmp/tmpnp9mhy9y",
+      "sha256": "261cad8c9135b346fe6e7af1661f466f279c19114874cf8208e9a50052fcb06f",
+      "size_bytes": 11607,
+      "observed_paths": [
+        "/tmp/tmpnp9mhy9y"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/tmpnp9mhy9y"
+    },
+    {
+      "sourcepath": "/tmp/tmpps9u_22k",
+      "sha256": "261cad8c9135b346fe6e7af1661f466f279c19114874cf8208e9a50052fcb06f",
+      "size_bytes": 11607,
+      "observed_paths": [
+        "/tmp/tmpps9u_22k"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/tmpps9u_22k"
+    },
+    {
+      "sourcepath": "/tmp/tmprzkmxl68",
+      "sha256": "261cad8c9135b346fe6e7af1661f466f279c19114874cf8208e9a50052fcb06f",
+      "size_bytes": 11607,
+      "observed_paths": [
+        "/tmp/tmprzkmxl68"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/tmprzkmxl68"
+    },
+    {
+      "sourcepath": "/tmp/tmpvf_6ybmk",
+      "sha256": "261cad8c9135b346fe6e7af1661f466f279c19114874cf8208e9a50052fcb06f",
+      "size_bytes": 11607,
+      "observed_paths": [
+        "/tmp/tmpvf_6ybmk"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/tmpvf_6ybmk"
+    },
+    {
+      "sourcepath": "/tmp/tmpy9owr1yg",
+      "sha256": "261cad8c9135b346fe6e7af1661f466f279c19114874cf8208e9a50052fcb06f",
+      "size_bytes": 11607,
+      "observed_paths": [
+        "/tmp/tmpy9owr1yg"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/tmpy9owr1yg"
+    },
+    {
+      "sourcepath": "/tmp/tmpznjxdxd3",
+      "sha256": "261cad8c9135b346fe6e7af1661f466f279c19114874cf8208e9a50052fcb06f",
+      "size_bytes": 11607,
+      "observed_paths": [
+        "/tmp/tmpznjxdxd3"
+      ],
+      "role": "inspected_dependency_or_reference; loading evidence is stated separately",
+      "local_snapshot": "calibration_evidence/files/tmp/tmpznjxdxd3"
+    }
+  ],
+  "missing_probed_paths": [
+    {
+      "sourcepath": "/home/whill/odin_ws/install/odin_ros_driver/share/odin_ros_driver/include/odin_calib_path.h",
+      "error": "[Errno 2] No such file or directory: '/home/whill/odin_ws/install/odin_ros_driver/share/odin_ros_driver/include/odin_calib_path.h'",
+      "note": "probe of a non-installed source include/src path, not a missing runtime dependency"
+    },
+    {
+      "sourcepath": "/home/whill/odin_ws/install/odin_ros_driver/share/odin_ros_driver/src/host_sdk_sample.cpp",
+      "error": "[Errno 2] No such file or directory: '/home/whill/odin_ws/install/odin_ros_driver/share/odin_ros_driver/src/host_sdk_sample.cpp'",
+      "note": "probe of a non-installed source include/src path, not a missing runtime dependency"
+    },
+    {
+      "sourcepath": "/home/whill/odin_ws/install/odin_ros_driver/share/odin_ros_driver/src/yaml_parser.cpp",
+      "error": "[Errno 2] No such file or directory: '/home/whill/odin_ws/install/odin_ros_driver/share/odin_ros_driver/src/yaml_parser.cpp'",
+      "note": "probe of a non-installed source include/src path, not a missing runtime dependency"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "calibration_evidence/services.txt",
+      "sha256": "2b959bd06f2ceb9f52496aaae7da96bfbcad738721a839788acd920edd0e9b0c"
+    },
+    {
+      "path": "calibration_evidence/runtime.json",
+      "sha256": "ec1f44791ec6ab5120628bd8ac6b257c2a8719b207f7bfb1dd06412709425435"
+    },
+    {
+      "path": "calibration_evidence/runtime_stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "calibration_evidence/parsed_configs.json",
+      "sha256": "e07ef14e959ba3ef8562f60bf9843001b386de1895d95e248619b87c36d3e91b"
+    },
+    {
+      "path": "calibration_evidence/discovery.json",
+      "sha256": "a56df1c3570c240f2dc0ca3bebea228cb8c63ad83ead1004f333d477c34925b6"
+    },
+    {
+      "path": "calibration_evidence/supplement.json",
+      "sha256": "a91b632c1e3ec5a533c3ad643a3e68622b41f9752f495028f95ee10fe2aad451"
+    },
+    {
+      "path": "calibration_evidence/extra_sources.json",
+      "sha256": "6a76f3a7c7c4baa89be7fbe6a65983100dfec62b00ac44f33d093a52e5edffe3"
+    },
+    {
+      "path": "calibration_evidence/source_files.json",
+      "sha256": "c122f08b6c8f9cb6eeb3ec258d5a5cdc3392e1edc5d2aabcb112d945ecc6870d"
+    },
+    {
+      "path": "calibration_evidence/final_hash_audit.json",
+      "sha256": "94c1177f8bb8e28bf1fc99d4dd9b253336ba63dc9b0467b281b9298bbcc7f281"
+    },
+    {
+      "path": "calibration_evidence/source_files_before_canonical_refresh.json",
+      "sha256": "e332b3356c21700944844e774501b25d4d6e9a853206c93b86340b5aad906259"
+    },
+    {
+      "path": "calibration_evidence/concurrent_package_update.json",
+      "sha256": "fb938bb06b33604a81f5e9130c930575188b5f7993343b20c780c26ceb7d6310"
+    }
+  ],
+  "final_hash_audit": {
+    "observed_at": "2026-11-01T04:16:31.377327+08:00",
+    "files_checked": 144,
+    "all_manifest_hashes_match": true,
+    "concurrent_change": "Only wheelchair_navigation/package.xml changed since initial read; latest bytes reread and reflected in manifest; see concurrent_package_update.json"
+  }
+}

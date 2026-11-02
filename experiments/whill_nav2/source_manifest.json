@@ -30,5 +30,31 @@
     "original recordings",
     "credential files",
     "absolute diagnostic symlinks"
+  ],
+  "documentation_evidence": [
+    {
+      "path": "docs/evidence/velocity_mapping_20261030_REPORT.md",
+      "jetson_source": "/home/whill/Shaki_ws/esp32_velocity_interface/calibration/REPORT.md",
+      "sha256": "77b26699dce85000da33fae1083f1e53985c426a967763b8a065ce9a68d80d64",
+      "role": "historical_documentation_evidence_not_current_runtime_state"
+    },
+    {
+      "path": "docs/evidence/velocity_model_20261030.json",
+      "jetson_source": "/home/whill/Shaki_ws/esp32_velocity_interface/calibration/model.json",
+      "sha256": "04750a0596f44dba7ff0efe1e6aeb526edcb5d0470ce857176ee71539be28a65",
+      "role": "historical_documentation_evidence_not_current_runtime_state"
+    },
+    {
+      "path": "docs/evidence/firmware_build_verification_20261030.json",
+      "jetson_source": "/home/whill/Shaki_ws/esp32_velocity_interface/firmware/BUILD_VERIFICATION.json",
+      "sha256": "b382d7f4e54d016fca987fed72edb80d8524d5b89703a8cf42037f61bb6d5faa",
+      "role": "historical_documentation_evidence_not_current_runtime_state"
+    },
+    {
+      "path": "docs/evidence/firmware_flash_args_20261030.txt",
+      "jetson_source": "/home/whill/Shaki_ws/esp32_velocity_interface/firmware/prebuilt/flash_args",
+      "sha256": "8b22f64aee1542ede5a884e70eceb30efa1cb19b497663645379b93d870db2e2",
+      "role": "historical_documentation_evidence_not_current_runtime_state"
+    }
   ]
 }

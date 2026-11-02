@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "frame": "base_link",
+  "model": "symmetric_separable_linear",
+  "input_radius_steps": 8.0,
+  "radial_normalization": true,
+  "forward_gain": 0.06707777745024013,
+  "reverse_gain": 0.050458867829928096,
+  "turn_gain": 0.10136067817594809,
+  "training_source": "bag/mouse_calibration_20261030_141218",
+  "hold_count": 33,
+  "validation": "leave-one-bag-out",
+  "validation_rmse": [
+    0.022632585239891315,
+    0.011233882390654995
+  ],
+  "validation_abs_error_p95": [
+    0.036308123666260336,
+    0.024197398244120105
+  ],
+  "symmetry": "v(-x,y)=v(x,y); w(-x,y)=-w(x,y)",
+  "inverse": "continuous analytic inverse then integer HID quantization",
+  "limitations": [
+    "Only recorded App setting/load/surface; notes incomplete",
+    "Static mapping; latency not identified",
+    "Host input acknowledgement is not iPad execution acknowledgement",
+    "Same-session grouped validation, not independent-session validation"
+  ]
+}
